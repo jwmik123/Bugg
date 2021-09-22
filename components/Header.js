@@ -11,7 +11,7 @@ function Header() {
     return (
         <header className='sticky top-0 z-50 grid grid-cols-2 pt-8 pb-5 px-10'>
             <div className='relative flex items-center h-8 cursor-pointer my-auto' onClick={() => router.push('/')}>
-                <h1 className='text-4xl font-staat text-gray-800'>BUGG.</h1>
+                <h1 className='text-4xl font-staat text-gray-800 my-auto'>BUGG.</h1>
             </div>
             <div>
                 <div className='flex justify-end lg:hidden'>
@@ -21,7 +21,7 @@ function Header() {
                     <p className='menu-item' onClick={() => router.push('/projects')}>Projecten</p>
                     <p className='menu-item' onClick={() => router.push('/about')}>Over ons</p>
                     <p className='menu-item' onClick={() => router.push('/contact')}>Contact</p>
-                    <button className='bg-green-600 text-white rounded-lg px-4 py-2
+                    <button className='bg-[#1c542d] text-white rounded-lg px-4 py-2
                                         active:scale-95 transition transform ease-out'>Start een project</button>
                 </div>
             </div>

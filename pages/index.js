@@ -13,10 +13,10 @@ export default function Home() {
       <Header />
       
       <main>
-        <section className='mx-10'>
-          <div className='bg-white pt-20 md:text-green-500 mx-auto'>
-              <h1 className='text-6xl font-bold'>Full-service mediabureau gespecialiseerd in het creëren van uw dromen.</h1>
-              <h2 className='text-3xl font-light mt-3 md:mt-5'>Marketing, websites, video's & animaties</h2>
+        <section className='px-10 bg-[#1c542d]'>
+          <div className='py-20 max-w-7xl lg:mx-auto text-white'>
+              <h1 className='text-6xl lg:text-8xl font-bold'>Full-service mediabureau gespecialiseerd in het creëren van uw dromen.</h1>
+              <h2 className='text-3xl lg:text-4xl font-light mt-3 md:mt-5'>Marketing, websites, video's & animaties</h2>
           </div>
         </section>
       </main>
