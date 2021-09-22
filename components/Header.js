@@ -1,8 +1,5 @@
 import { useRouter } from 'next/dist/client/router';
 
-import Image from 'next/image';
-import smallLogo from '../assets/images/BUGG-SMALL.PNG';
-
 import { 
     MenuIcon
  } from '@heroicons/react/outline';
