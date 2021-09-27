@@ -9,7 +9,7 @@ function Header() {
     const router = useRouter();
 
     return (
-        <header className='sticky top-0 z-50 grid grid-cols-2 pt-8 pb-5 px-10'>
+        <header className='sticky top-0 z-50 grid grid-cols-2 pt-5 pb-5 px-10'>
             <div className='relative flex items-center h-8 cursor-pointer my-auto' onClick={() => router.push('/')}>
                 <h1 className='text-4xl font-staat text-gray-800 my-auto'>BUGG.</h1>
             </div>
