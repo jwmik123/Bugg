@@ -17,8 +17,7 @@ function Header() {
     })
 
     const onScroll = () => {
-        console.log(window.scrollY);
-        if (window.scrollY >= 80) {
+        if (window.scrollY >= 50) {
             setColor(true);
         } else {
             setColor(false);
