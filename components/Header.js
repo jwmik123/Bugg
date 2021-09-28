@@ -1,4 +1,5 @@
 import { useRouter } from 'next/dist/client/router';
+import { useEffect, useState } from 'react';
 
 import { 
     MenuIcon
@@ -7,9 +8,25 @@ import {
 function Header() {
 
     const router = useRouter();
+    const [color, setColor] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener('scroll', onScroll);
+    })
+
+    const onScroll = () => {
+        console.log(window.scrollY);
+        if (window.scrollY >= 80) {
+            setColor(true);
+        } else {
+            setColor(false);
+        }
+    }
+
+   
 
     return (
-        <header className='sticky top-0 z-50 grid grid-cols-2 pt-5 pb-5 px-10'>
+        <header className={`sticky top-0 z-50 grid grid-cols-2 pt-5 pb-5 px-10 ${color ? 'bg-blue-500' : 'bg-red-500'}`}>
             <div className='relative flex items-center h-8 cursor-pointer my-auto' onClick={() => router.push('/')}>
                 <h1 className='text-4xl font-staat text-gray-800 my-auto'>BUGG.</h1>
             </div>
