@@ -9,12 +9,14 @@
     "@badrap/bar-of-progress": "^0.1.2",
     "@heroicons/react": "^1.0.4",
     "firebase": "^9.0.2",
+    "formik": "^2.2.9",
     "next": "latest",
     "react": "^17.0.2",
     "react-animations": "^1.0.0",
     "react-dom": "^17.0.2",
     "react-firebase-hooks": "^3.0.4",
-    "react-firebaseui": "^5.0.2"
+    "react-firebaseui": "^5.0.2",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",

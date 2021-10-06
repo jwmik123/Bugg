@@ -7,9 +7,4 @@
         @apply cursor-pointer py-1 px-4 
                transition transform duration-100
     }
-
-}
-body {
-    height: 3000px;
-    background-color: #042825;
 }
