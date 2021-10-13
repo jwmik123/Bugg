@@ -14,7 +14,7 @@ const ContactSchema = Yup.object().shape({
 
 function ContactForm() {
     return (
-        <div className='w-6/12 mx-auto'>
+        <div className='md:w-6/12 mx-auto p-36'>
             <Formik
                 initialValues={{
                     name: '',
@@ -22,37 +22,49 @@ function ContactForm() {
                     company: '',
                     message: ''
                 }}
-                validationSchema={ContactSchema}
+                validationSchema={ ContactSchema }
             >
                 {({ errors, touched }) => (
-                    <Form className='flex flex-col'>
-                        <div className='flex'>
-                            <label htmlFor='name'>Naam*</label>
-                            { errors.name && touched.name 
-                            ? ( <div>{errors.name}</div>) 
-                            : null }
+                    <Form className='flex flex-col bg-white p-10'>
+                        <div>
+                            <div className='flex'>
+                                <label htmlFor='name' classname=''>Naam*</label>
+                                { errors.name && touched.name 
+                                ? ( <div>{errors.name}</div>) 
+                                : null }
+                            </div>
                             <Field name='name' />
                         </div>
-
-                        <label htmlFor='email'>Emailadres*</label>
-                        { errors.email && touched.email 
-                        ? ( <div>{errors.email}</div>) 
-                        : null }
+                        <div className='flex'>       
+                            <label htmlFor='email' className='text-white'>Emailadres*</label>
+                            { errors.email && touched.email 
+                            ? ( <div>{errors.email}</div>) 
+                            : null }
+                        </div>
                         <Field name='email' />
 
-                        <label htmlFor='company'>Bedrijf</label>
-                        { errors.company && touched.company 
-                        ? ( <div>{errors.company}</div>) 
-                        : null }
+                        <div className='flex'>
+                            <label htmlFor='company' className='text-white'>Bedrijf</label>
+                            { errors.company && touched.company 
+                            ? ( <div>{errors.company}</div>) 
+                            : null }
+                        </div>
                         <Field name='company' />
 
-                        <label htmlFor='message'>Bericht*</label>
-                        { errors.message && touched.message 
-                        ? ( <div>{errors.message}</div>) 
-                        : null }
+                        <div className='flex'>
+                            <label htmlFor='message' className='text-white'>Bericht*</label>
+                            { errors.message && touched.message 
+                            ? ( <div>{errors.message}</div>) 
+                            : null }
+                        </div>
                         <Field name='message' as='textarea' />
+                        
+                        <div>
+                        <button className='text-[#042825] bg-white rounded-lg mt-5 px-4 py-2 active:scale-95 transition transform ease-out' type='submit'>Versturen</button>
+                        </div>
                     </Form>
                 )}
+               
             </Formik>
         </div>
     )
