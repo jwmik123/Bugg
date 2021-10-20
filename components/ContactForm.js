@@ -33,7 +33,7 @@ function ContactForm() {
                                 ? ( <div>{errors.name}</div>) 
                                 : null }
                             </div>
-                            <Field name='name' />
+                            <Field name='name'  className='input-field'/>
                         </div>
                         <div className='flex'>       
                             <label htmlFor='email' className=''>Emailadres*</label>
@@ -41,7 +41,7 @@ function ContactForm() {
                             ? ( <div>{errors.email}</div>) 
                             : null }
                         </div>
-                        <Field name='email' />
+                        <Field name='email' className='input-field' />
 
                         <div className='flex'>
                             <label htmlFor='company' className=''>Bedrijf</label>
@@ -49,7 +49,7 @@ function ContactForm() {
                             ? ( <div>{errors.company}</div>) 
                             : null }
                         </div>
-                        <Field name='company' />
+                        <Field name='company' className='input-field' />
 
                         <div className='flex'>
                             <label htmlFor='message' className=''>Bericht*</label>
@@ -57,7 +57,7 @@ function ContactForm() {
                             ? ( <div>{errors.message}</div>) 
                             : null }
                         </div>
-                        <Field name='message' as='textarea' />
+                        <Field name='message' as='textarea' className='input-field' />
                         
                         <div>
                         <button className='text-white bg-[#042825] rounded-lg mt-5 px-4 py-2 active:scale-95 transition transform ease-out' type='submit'>Versturen</button>
