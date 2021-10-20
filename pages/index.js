@@ -29,6 +29,7 @@ export default function Home() {
            className='w-1/2'
            rotateXMax='3'
            rotateYMax='3'
+           rotateTouch='false'
            >
           <div className='relative p-2 md:p-14 bg-white rounded-md opacity-80'>
             <h2 className='text-2xl'>Start een project</h2>
