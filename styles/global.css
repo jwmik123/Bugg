@@ -1,10 +1,15 @@
 @tailwind components;
 
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import '../node_modules/atropos/atropos.css';
 
 @layer components {
     .menu-item {
         @apply cursor-pointer py-1 px-4 
                transition transform duration-100
     }
+}
+
+body {
+    background: #042825;
 }

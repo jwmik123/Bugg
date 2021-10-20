@@ -14,7 +14,7 @@ function Header() {
     })
 
     return (
-        <header className="sticky bg-white shadow-sm top-0 z-50 grid grid-cols-2 pt-5 pb-6 px-10 lg:px-20 lg:mt-10 transition transform ease-in duration-200">
+        <header className="sticky bg-white shadow-sm top-0 z-50 grid grid-cols-2 pt-5 pb-6 px-10 lg:px-20 transition transform ease-in duration-200">
             <div className='relative flex items-center h-8 cursor-pointer my-auto' onClick={() => router.push('/')}>
                 <h1 className="text-5xl font-staat text-[#042825] my-auto">BUGG.</h1>
             </div>
