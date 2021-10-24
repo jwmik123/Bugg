@@ -24,18 +24,15 @@ export default function Home() {
         <section className='p-12 md:p-24 mt-44 w-full relative'>
           <h1 className='text-white text-4xl md:text-6xl lg:text-8xl font-bold'>Full-service mediabureau gespecialiseerd in het realiseren van jouw dromen!</h1>
         </section>
-        <section className='flex items-center w-full justify-center my-72'>
-          <Atropos
-           className='w-1/2'
-           rotateXMax='3'
-           rotateYMax='3'
-           rotateTouch='false'
-           >
-          <div className='relative p-2 md:p-14 bg-white rounded-md opacity-80'>
-            <h2 className='text-2xl'>Start een project</h2>
+        <section className='w-full mt-72 bg-white flex justify-center'>
+          <div className='p-2 md:p-14'>
+            <h1 className='text-5xl text-[#042825]'>Start een project</h1>
+            <p className='my-12 text-xl w-1/2'>Denk je dat jouw bedrijf of idee door ons gerealiseerd kan worden? 
+              Of ben je gewoon benieuwd naar de mogelijkheden? 
+              We zouden het leuk vinden om van je te horen.</p>
             <ContactForm />
           </div>
-          </Atropos>
+  
          
         </section>
       </main>

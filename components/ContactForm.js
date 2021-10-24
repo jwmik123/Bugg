@@ -28,7 +28,7 @@ function ContactForm() {
                     <Form>
                         <div>
                             <div className='flex'>
-                                <label htmlFor='name' className=''>Naam*</label>
+                                <label htmlFor='name' className='text-xl text-gray-900'>Naam*</label>
                                 { errors.name && touched.name 
                                 ? ( <div>{errors.name}</div>) 
                                 : null }
@@ -36,7 +36,7 @@ function ContactForm() {
                             <Field name='name'  className='input-field'/>
                         </div>
                         <div className='flex'>       
-                            <label htmlFor='email' className=''>Emailadres*</label>
+                            <label htmlFor='email' className='text-xl text-gray-900'>Emailadres*</label>
                             { errors.email && touched.email 
                             ? ( <div>{errors.email}</div>) 
                             : null }
@@ -44,7 +44,7 @@ function ContactForm() {
                         <Field name='email' className='input-field' />
 
                         <div className='flex'>
-                            <label htmlFor='company' className=''>Bedrijf</label>
+                            <label htmlFor='company' className='text-xl text-gray-900'>Bedrijf</label>
                             { errors.company && touched.company 
                             ? ( <div>{errors.company}</div>) 
                             : null }
@@ -52,7 +52,7 @@ function ContactForm() {
                         <Field name='company' className='input-field' />
 
                         <div className='flex'>
-                            <label htmlFor='message' className=''>Bericht*</label>
+                            <label htmlFor='message' className='text-xl text-gray-900'>Bericht*</label>
                             { errors.message && touched.message 
                             ? ( <div>{errors.message}</div>) 
                             : null }
