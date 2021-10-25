@@ -1,5 +1,8 @@
+import { useRef, useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+
+import emailjs from 'emailjs-com';
 
 const ContactSchema = Yup.object().shape({
     name: Yup.string()
@@ -12,9 +15,21 @@ const ContactSchema = Yup.object().shape({
         .min(20, 'minimaal 20 karakters.')
 })
 
-function ContactForm() {
+const ContactForm = () => {
+
+    const form = useRef();
+
+    const sendEmail = () => {
+        emailjs.sendForm('service_2yyu7od', 'template_iplf3mq', form.current, 'user_IAcDtiyGrAvWKF1yWoq7j')
+            .then(result => {
+                <div>Thanks, {result.text}</div>
+            }, (error) => {
+                console.log(error.text)
+            });
+    }
+
     return (
-        <div className=''>
+        <div>
             <Formik
                 initialValues={{
                     name: '',
@@ -25,7 +40,7 @@ function ContactForm() {
                 validationSchema={ ContactSchema }
             >
                 {({ errors, touched }) => (
-                    <Form>
+                    <Form ref={form}>
                         <div>
                             <div className='flex'>
                                 <label htmlFor='name' className='text-xl text-gray-900'>Naam*</label>
@@ -60,7 +75,7 @@ function ContactForm() {
                         <Field name='message' as='textarea' className='input-field' />
                         
                         <div>
-                        <button className='text-white bg-[#042825] rounded-lg mt-5 px-4 py-2 active:scale-95 transition transform ease-out' type='submit'>Versturen</button>
+                        <button className='text-white bg-[#042825] rounded-lg mt-5 px-4 py-2 active:scale-95 transition transform ease-out' type='submit' onClick={() => sendEmail()}>Versturen</button>
                         </div>
                     </Form>
                 )}

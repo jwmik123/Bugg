@@ -2,10 +2,6 @@ import Head from 'next/head'
 import ContactForm from '../components/ContactForm'
 import Header from '../components/Header'
 
-import 'atropos/css'
-
-import Atropos from 'atropos/react'
-
 export default function Home() {
   return (
     <div>
@@ -25,7 +21,7 @@ export default function Home() {
           <h1 className='text-white text-4xl md:text-6xl lg:text-8xl font-bold'>Full-service mediabureau gespecialiseerd in het realiseren van jouw dromen!</h1>
         </section>
         <section className='w-full mt-72 bg-white flex justify-center items-center'>
-          <div className='pt-14 pl-2 md:pl-14'>
+          <div className='py-14 pl-2 md:pl-14'>
             <h1 className='text-5xl text-[#042825]'>Start een project</h1>
             <p className='my-12 text-xl md:w-1/2'>Denk je dat jouw bedrijf of idee door ons gerealiseerd kan worden? 
               Of ben je gewoon benieuwd naar de mogelijkheden? 
