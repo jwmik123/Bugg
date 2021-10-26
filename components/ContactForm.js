@@ -50,7 +50,7 @@ const ContactForm = () => {
                             </div>
                             <Field name='name'  className='input-field'/>
                         </div>
-                        <div className='flex'>       
+                        <div className='flex'>    
                             <label htmlFor='email' className='text-xl text-gray-900'>Emailadres*</label>
                             { errors.email && touched.email 
                             ? ( <div>{errors.email}</div>) 
