@@ -2,7 +2,11 @@ import Head from 'next/head'
 import ContactForm from '../components/ContactForm'
 import Header from '../components/Header'
 
+import Image from 'next/image'
+import landingImage from '../assets/images/landing-image.jpeg'
+
 export default function Home() {
+
   return (
     <div>
       <Head>
@@ -11,26 +15,25 @@ export default function Home() {
       </Head>
 
       {/* Header */}
-      {/* <Header /> */}
+      <Header />
       <main>
-      
-      {/* <div className='hidden lg:block absolute bottom-32 left-20 w-96 h-96 rounded-full blur-sm bg-green-700'></div>
-      <div className='absolute z-0 top-20 right-20 md:top-60 md:right-40 w-52 h-52 blur-sm bg-green-600'></div>
-       */}
-        <section className='p-12 md:p-24 mt-44 w-full relative'>
-          <h1 className='text-white text-4xl md:text-6xl lg:text-8xl font-bold'>Website gaat live op 30 oktober.</h1>
-        </section>
-        {/* <section className='w-full mt-72 bg-white flex justify-center items-center'>
-          <div className='py-14 pl-2 md:pl-14'>
-            <h1 className='text-5xl text-[#042825]'>Start een project</h1>
-            <p className='my-12 text-xl md:w-1/2'>Denk je dat jouw bedrijf of idee door ons gerealiseerd kan worden? 
-              Of ben je gewoon benieuwd naar de mogelijkheden? 
-              We zouden het leuk vinden om van je te horen.</p>
-            <ContactForm />
+        <section className='relative h-[50vh] md:h-[100vh] flex items-center'>
+          <Image
+            className='opacity-60'
+            src={landingImage}
+            layout='fill'
+            objectFit='cover'
+            objectPosition='center'
+          />
+          <div className='absolute flex flex-col gap-3 font-bold left-6 md:left-32 lg:left-64'>
+          <h1 className="text-white text-4xl md:text-7xl">Hi, welkom bij Bugg.</h1>
+            <h2 className='text-[#F5D905] text-2xl md:text-6xl'>Website Development</h2>
+            <h3 className='text-white text-1xl md:text-4xl'>In Amsterdam</h3>
           </div>
-  
-         
-        </section> */}
+        </section>
+        <section>
+          <ContactForm />
+        </section>
       </main>
     </div>
   )

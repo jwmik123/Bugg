@@ -6,6 +6,13 @@ module.exports = {
     extend: {},
     fontFamily: {
       'staat': ['Staatliches', 'cursive'],
+      'poppins': ['Poppins'],
+    },
+    backdropGrayscale: {
+      50: '.5'
+    },
+    blur: {
+      'xs': '2px'
     }
   },
   variants: {

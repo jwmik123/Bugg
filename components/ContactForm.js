@@ -43,7 +43,7 @@ const ContactForm = () => {
                     <Form ref={form}>
                         <div>
                             <div className='flex'>
-                                <label htmlFor='name' className='text-xl text-gray-900'>Naam*</label>
+                                <label htmlFor='name' className='text-xl text-white'>Naam*</label>
                                 { errors.name && touched.name 
                                 ? ( <div>{errors.name}</div>) 
                                 : null }
@@ -51,7 +51,7 @@ const ContactForm = () => {
                             <Field name='name'  className='input-field'/>
                         </div>
                         <div className='flex'>    
-                            <label htmlFor='email' className='text-xl text-gray-900'>Emailadres*</label>
+                            <label htmlFor='email' className='text-xl text-white'>Emailadres*</label>
                             { errors.email && touched.email 
                             ? ( <div>{errors.email}</div>) 
                             : null }
@@ -59,7 +59,7 @@ const ContactForm = () => {
                         <Field name='email' className='input-field' />
 
                         <div className='flex'>
-                            <label htmlFor='company' className='text-xl text-gray-900'>Bedrijf</label>
+                            <label htmlFor='company' className='text-xl text-white'>Bedrijf</label>
                             { errors.company && touched.company 
                             ? ( <div>{errors.company}</div>) 
                             : null }
@@ -67,7 +67,7 @@ const ContactForm = () => {
                         <Field name='company' className='input-field' />
 
                         <div className='flex'>
-                            <label htmlFor='message' className='text-xl text-gray-900'>Bericht*</label>
+                            <label htmlFor='message' className='text-xl text-white'>Bericht*</label>
                             { errors.message && touched.message 
                             ? ( <div>{errors.message}</div>) 
                             : null }
