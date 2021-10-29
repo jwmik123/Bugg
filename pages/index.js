@@ -17,7 +17,7 @@ export default function Home() {
       {/* Header */}
       <Header />
       <main>
-        <section className='relative h-[50vh] md:h-[100vh] flex items-center'>
+        <section className='relative h-[50vh] md:h-[100vh] flex items-center justify-center '>
           <Image
             className='opacity-60'
             src={landingImage}
@@ -25,7 +25,7 @@ export default function Home() {
             objectFit='cover'
             objectPosition='center'
           />
-          <div className='absolute flex flex-col gap-3 font-bold left-6 md:left-32 lg:left-64'>
+          <div className='absolute flex flex-col gap-1 md:gap-3 font-bold md:left-32 lg:left-64'>
           <h1 className="text-white text-4xl md:text-7xl">Hi, welkom bij Bugg.</h1>
             <h2 className='text-[#F5D905] text-2xl md:text-6xl'>Website Development</h2>
             <h3 className='text-white text-1xl md:text-4xl'>In Amsterdam</h3>

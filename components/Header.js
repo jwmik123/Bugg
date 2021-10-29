@@ -1,5 +1,4 @@
 import { useRouter } from 'next/dist/client/router';
-import { useEffect, useState } from 'react';
 
 import { 
     MenuIcon
@@ -25,7 +24,7 @@ function Header() {
                 <button>Over Ons</button>
                 <button>Contact</button>
             </div>
-            <div className='hidden md:block'>
+            <div className='hidden lg:block'>
                 <button className='border-2 border-[#F5D905] text-[#F5D905] px-4 py-2 rounded'>Start een project</button>
             </div>
         </header>
