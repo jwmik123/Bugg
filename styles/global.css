@@ -28,7 +28,3 @@
 body {
     background: rgb(22,24,22);
 }
-
-.grecaptcha-badge { 
-    visibility: hidden;
-}

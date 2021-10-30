@@ -27,7 +27,7 @@ export default function Home() {
       <Header />
       <main>
         {/* Landing Section */}
-        <section className='relative h-[50vh] md:h-[100vh] flex items-center justify-center '>
+        <section className='relative h-[40vh] md:h-[100vh] flex items-center justify-center '>
           <Image
             className='opacity-30'
             src={landingImage}
@@ -36,15 +36,15 @@ export default function Home() {
             objectPosition='center'
           />
           <div className='absolute flex flex-col gap-1 md:gap-3 font-bold md:left-32 lg:left-64'>
-          <h1 data-aos="flip-down" className="text-white text-4xl md:text-7xl">Hi, welkom bij Bugg.</h1>
+          <h1 data-aos="flip-down" className="text-white text-5xl md:text-7xl">Hi, welkom bij Bugg.</h1>
           <div data-aos="flip-down" data-aos-delay="150">
           <TextLoop 
-              className='text-[#F1D302] text-2xl md:text-6xl' 
+              className='text-[#F1D302] text-4xl md:text-6xl' 
               springConfig={{ stiffness: 60, damping: 11 }} 
               children={["Website Development", "Online Branding", "Video's & Animaties"]} 
             />
           </div>
-            <h3 data-aos="flip-down"data-aos-delay="300" className='text-white text-1xl md:text-4xl'>In Amsterdam</h3>
+            <h3 data-aos="flip-down"data-aos-delay="300" className='text-white text-2xl md:text-4xl'>In Amsterdam</h3>
             <ChevronDownIcon 
               className="hidden lg:block h-12 w-12 bg-[#F1D302] text-black rounded-full mt-12 cursor-pointer" 
               onClick={() => {animateScrollTo(document.querySelector('.services'))}} />

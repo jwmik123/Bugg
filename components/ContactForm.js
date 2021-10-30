@@ -1,7 +1,6 @@
-import { createRef, useRef, useState, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import ReCAPTCHA from 'react-google-recaptcha';
 import AOS from 'aos';
 
 import emailjs from 'emailjs-com';
@@ -20,8 +19,6 @@ const ContactSchema = Yup.object().shape({
 const ContactForm = () => {
 
     const form = useRef();
-
-    const recaptchaRef = createRef();
 
     const sendEmail = () => {
         emailjs.sendForm('service_2yyu7od', 'template_iplf3mq', form.current, 'user_IAcDtiyGrAvWKF1yWoq7j')
@@ -49,24 +46,24 @@ const ContactForm = () => {
             >
                 {({ errors, touched }) => (
                     <div>
-                        <Form ref={form} onSubmit={() => { recaptchaRef.current.execute(); }} className='flex flex-col gap-5'>
+                        <Form ref={form} action="?" method="POST" className='flex flex-col gap-5'>
                             <Field data-aos='fade-up' name='name' placeholder="Naam"  className='input-field'/>
                             <Field data-aos='fade-up' data-aos-delay='150' name='email' placeholder="E-mail" className='input-field' />
                             <Field data-aos='fade-up' data-aos-delay='200' name='company' placeholder="Bedrijf" className='input-field' />
                             <Field data-aos='fade-up' data-aos-delay='250' name='message' placeholder="Bericht" as='textarea' className='input-field' />
                             <div>
-                                <button className='border-2 border-[#F1D302] text-[#F1D302] px-4 py-2 rounded hover:bg-[#F1D302] hover:text-black transition-all active:scale-95' type='submit' onClick={() => sendEmail()}>Versturen</button>
+                                <button 
+                                    className='border-2 border-[#F1D302] text-[#F1D302] px-4 py-2 rounded 
+                                        hover:bg-[#F1D302] hover:text-black transition-all active:scale-95' 
+                                    type='submit' 
+                                    onClick={() => sendEmail()}
+                                >Versturen</button>
                             </div>
                             <p className="text-gray-400 text-xs">
                                 This site is protected by reCAPTCHA and the Google
                                 <a className="text-blue-800" href="https://policies.google.com/privacy"> Privacy Policy</a> and
                                 <a className="text-blue-800" href="https://policies.google.com/terms"> Terms of Service</a> apply.
                             </p>
-                            <ReCAPTCHA
-                                ref={recaptchaRef}
-                                size='invisible'
-                                sitekey="6LdeEQQdAAAAANU2BgrQ89PlBAfWvKeO_nzhe3uZ"
-                            />
                         </Form>
                     </div>
                 )}
