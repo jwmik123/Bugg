@@ -12,6 +12,10 @@
                transition transform duration-100
     }
 
+    .input-field {
+        @apply focus:outline-yellow bg-[#1d1d24] px-5 py-3 rounded-lg w-full text-white
+    }
+
     .form-error {
         @apply 
     }
@@ -23,6 +27,4 @@
 
 body {
     background: rgb(22,24,22);
-    height: 3000px;
-    /* overflow: hidden; */
 }

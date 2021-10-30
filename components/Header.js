@@ -25,7 +25,7 @@ function Header() {
                 <button>Contact</button>
             </div>
             <div className='hidden lg:block'>
-                <button className='border-2 border-[#F1D302] text-[#F1D302] px-4 py-2 rounded'>Start een project</button>
+                <button onClick={() => {animateScrollTo(document.querySelector('.contact'))}} className='border-2 border-[#F1D302] text-[#F1D302] px-4 py-2 rounded hover:bg-[#F1D302] hover:text-black transition-all active:scale-95'>Start een project</button>
             </div>
         </header>
     )

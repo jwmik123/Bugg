@@ -1,6 +1,7 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import AOS from 'aos';
 
 import emailjs from 'emailjs-com';
 
@@ -28,6 +29,10 @@ const ContactForm = () => {
             });
     }
 
+    useEffect(() => {
+        AOS.init();
+      })
+
     return (
         <div>
             <Formik
@@ -40,44 +45,17 @@ const ContactForm = () => {
                 validationSchema={ ContactSchema }
             >
                 {({ errors, touched }) => (
-                    <Form ref={form}>
-                        <div>
-                            <div className='flex'>
-                                <label htmlFor='name' className='text-xl text-white'>Naam*</label>
-                                { errors.name && touched.name 
-                                ? ( <div>{errors.name}</div>) 
-                                : null }
+                    <div>
+                        <Form ref={form} className='flex flex-col gap-5'>
+                            <Field data-aos='fade-up' name='name' placeholder="Naam"  className='input-field'/>
+                            <Field data-aos='fade-up' data-aos-delay='150' name='email' placeholder="E-mail" className='input-field' />
+                            <Field data-aos='fade-up' data-aos-delay='200' name='company' placeholder="Bedrijf" className='input-field' />
+                            <Field data-aos='fade-up' data-aos-delay='250' name='message' placeholder="Bericht" as='textarea' className='input-field' />
+                            <div>
+                                <button className='border-2 border-[#F1D302] text-[#F1D302] px-4 py-2 rounded hover:bg-[#F1D302] hover:text-black transition-all active:scale-95' type='submit' onClick={() => sendEmail()}>Versturen</button>
                             </div>
-                            <Field name='name'  className='input-field'/>
-                        </div>
-                        <div className='flex'>    
-                            <label htmlFor='email' className='text-xl text-white'>Emailadres*</label>
-                            { errors.email && touched.email 
-                            ? ( <div>{errors.email}</div>) 
-                            : null }
-                        </div>
-                        <Field name='email' className='input-field' />
-
-                        <div className='flex'>
-                            <label htmlFor='company' className='text-xl text-white'>Bedrijf</label>
-                            { errors.company && touched.company 
-                            ? ( <div>{errors.company}</div>) 
-                            : null }
-                        </div>
-                        <Field name='company' className='input-field' />
-
-                        <div className='flex'>
-                            <label htmlFor='message' className='text-xl text-white'>Bericht*</label>
-                            { errors.message && touched.message 
-                            ? ( <div>{errors.message}</div>) 
-                            : null }
-                        </div>
-                        <Field name='message' as='textarea' className='input-field' />
-                        
-                        <div>
-                        <button className='text-white bg-[#042825] rounded-lg mt-5 px-4 py-2 active:scale-95 transition transform ease-out' type='submit' onClick={() => sendEmail()}>Versturen</button>
-                        </div>
-                    </Form>
+                        </Form>
+                    </div>
                 )}
                
             </Formik>

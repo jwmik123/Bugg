@@ -3,7 +3,11 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      outline: {
+        yellow: '2px solid #F1D302'
+      }
+    },
     fontFamily: {
       'staat': ['Staatliches', 'cursive'],
       'poppins': ['Poppins'],

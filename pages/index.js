@@ -51,13 +51,13 @@ export default function Home() {
           </div>
             <h3 data-aos="flip-down"data-aos-delay="300" className='text-white text-1xl md:text-4xl'>In Amsterdam</h3>
             <ChevronDownIcon 
-              className="hidden lg:block h-12 w-12 text-white mt-12 animate-bounce cursor-pointer" 
+              className="hidden lg:block h-12 w-12 bg-[#F1D302] text-black rounded-full mt-12 cursor-pointer" 
               onClick={() => {animateScrollTo(document.querySelector('.services'))}} />
           </div>
         </section>
 
         {/* Services Section */}
-        <section className='services py-14 px-6 md:px-16 lg:px-32 lg:py-24 bg-[#101010]'>
+        <section className='services flex justify-center items-center flex-col h-[90vh] py-14 px-6 md:px-16 lg:px-32 lg:py-24 bg-[#101010]'>
           <h1 data-aos="fade-up" className="text-center text-white text-4xl md:text-6xl font-bold">Onze geweldige diensten</h1>
           <p data-aos="fade-up" className="text-[#717173] text-lg md:text-xl font-light text-center pt-4 pb-12">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
           <div className="flex gap-5 flex-wrap justify-center">
@@ -81,11 +81,12 @@ export default function Home() {
         </section>
   
         {/* Contact Section */}
-        <section className='contact flex py-14 md:px-32 lg:px-64 lg:py-24  bg-[#101010]'>
+        <section className='contact flex justify-center py-14 md:px-32 lg:px-64 lg:py-24  bg-[#101010]'>
           <div className="pr-5 w-1/2">
             <h1 data-aos="fade-up" className="text-white text-4xl md:text-6xl font-bold">Laten we samen een project starten.</h1>
+            <p className="text-[#717173] font-light text-lg mt-5">I’d love to meet up with you to discuss your venture, and potential collaborations.</p>
           </div>
-          <div>
+          <div className="w-1/2">
             <ContactForm />
           </div>
         </section>
