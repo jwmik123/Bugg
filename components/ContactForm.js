@@ -59,7 +59,6 @@ const ContactForm = () => {
                             </div>
                             <ReCAPTCHA
                                 ref={recaptchaRef}
-                                size="invisible"
                                 sitekey="6LdeEQQdAAAAANU2BgrQ89PlBAfWvKeO_nzhe3uZ"
                             />
                         </Form>
