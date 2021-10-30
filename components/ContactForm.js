@@ -57,8 +57,14 @@ const ContactForm = () => {
                             <div>
                                 <button className='border-2 border-[#F1D302] text-[#F1D302] px-4 py-2 rounded hover:bg-[#F1D302] hover:text-black transition-all active:scale-95' type='submit' onClick={() => sendEmail()}>Versturen</button>
                             </div>
+                            <p className="text-gray-400 text-xs">
+                                This site is protected by reCAPTCHA and the Google
+                                <a className="text-blue-800" href="https://policies.google.com/privacy"> Privacy Policy</a> and
+                                <a className="text-blue-800" href="https://policies.google.com/terms"> Terms of Service</a> apply.
+                            </p>
                             <ReCAPTCHA
                                 ref={recaptchaRef}
+                                size='invisible'
                                 sitekey="6LdeEQQdAAAAANU2BgrQ89PlBAfWvKeO_nzhe3uZ"
                             />
                         </Form>

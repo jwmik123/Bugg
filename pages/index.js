@@ -81,7 +81,7 @@ export default function Home() {
         </section>
   
         {/* Contact Section */}
-        <section className='contact flex flex-col items-center lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-64 lg:py-24  bg-[#101010]'>
+        <section className='contact flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-64 lg:py-24  bg-[#101010]'>
           <div className="pr-5 w-10/12 lg:w-1/2">
             <h1 data-aos="fade-up" className="text-white text-4xl md:text-6xl font-bold">Laten we samen een project starten.</h1>
             <p className="text-[#717173] font-light text-lg my-5">
