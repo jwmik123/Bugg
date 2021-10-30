@@ -21,12 +21,12 @@ const ContactForm = () => {
     const form = useRef();
 
     const sendEmail = () => {
-        emailjs.sendForm('service_2yyu7od', 'template_iplf3mq', form.current, 'user_IAcDtiyGrAvWKF1yWoq7j')
-            .then(result => {
-                <div>Thanks, {result.text}</div>
-            }, (error) => {
-                console.log(error.text)
-            });
+        // emailjs.sendForm('service_2yyu7od', 'template_iplf3mq', form.current, 'user_IAcDtiyGrAvWKF1yWoq7j')
+        //     .then(result => {
+        //         <div>Thanks, {result.text}</div>
+        //     }, (error) => {
+        //         console.log(error.text)
+        //     });
     }
 
     useEffect(() => {
