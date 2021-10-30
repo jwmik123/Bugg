@@ -8,6 +8,7 @@
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
     "@heroicons/react": "^1.0.4",
+    "animated-scroll-to": "^2.2.0",
     "atropos": "^1.0.1",
     "emailjs-com": "^3.2.0",
     "firebase": "^9.0.2",
