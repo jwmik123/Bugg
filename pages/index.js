@@ -1,3 +1,5 @@
+import TextLoop from 'react-text-loop'
+
 import Head from 'next/head'
 import ContactForm from '../components/ContactForm'
 import Header from '../components/Header'
@@ -27,7 +29,11 @@ export default function Home() {
           />
           <div className='absolute flex flex-col gap-1 md:gap-3 font-bold md:left-32 lg:left-64'>
           <h1 className="text-white text-4xl md:text-7xl">Hi, welkom bij Bugg.</h1>
-            <h2 className='text-[#F5D905] text-2xl md:text-6xl'>Website Development</h2>
+            <TextLoop 
+              className='text-[#F5D905] text-2xl md:text-6xl' 
+              springConfig={{ stiffness: 60, damping: 11 }} 
+              children={["Website Development", "Online Branding", "Video's & Animaties"]} 
+            />
             <h3 className='text-white text-1xl md:text-4xl'>In Amsterdam</h3>
           </div>
         </section>

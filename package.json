@@ -19,6 +19,7 @@
     "react-firebase-hooks": "^3.0.4",
     "react-firebaseui": "^5.0.2",
     "react-scroll-parallax": "^2.4.0",
+    "react-text-loop": "^2.3.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {
