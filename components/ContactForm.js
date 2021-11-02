@@ -52,10 +52,10 @@ const ContactForm = () => {
 
     setFormSubmitted({ title: 'Bericht wordt verstuurd...', paragraph: '' });
     emailjs.send(
-        'service_2yyu7od', 
-        'template_iplf3mq',
-      params,
-      'user_IAcDtiyGrAvWKF1yWoq7j',
+        process.env.EMAIL_JS_SERVICE, 
+        process.env.EMAIL_JS_TEMPLATE,
+        params,
+        process.env.EMAIL_JS_USER,
     )
       .then(({ status }) => {
         if (status === 200) {
