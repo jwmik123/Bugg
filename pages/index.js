@@ -5,6 +5,7 @@ import ContactForm from '../components/ContactForm'
 import Header from '../components/Header'
 import animateScrollTo from 'animated-scroll-to'
 import Image from 'next/image'
+
 import landingImage from '../assets/images/landing-image.webp'
 import { ChevronDownIcon, CodeIcon, ChartBarIcon, FilmIcon } from '@heroicons/react/outline'
 import 'aos/dist/aos.css'
@@ -14,13 +15,15 @@ export default function Home() {
 
   useEffect(() => {
     AOS.init();
-  })
+    AOS.refresh();
+  }, [AOS])
 
   return (
     <div>
       <Head>
         <title>Bugg.</title>
         <link rel="icon" href='/favicon.ico'/>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </Head>
 
       {/* Header */}
@@ -52,7 +55,7 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className='services flex justify-center items-center flex-col lg:h-[90vh] py-14 px-6 md:px-16 lg:px-32 lg:py-24 bg-[#101010]'>
+        <section className='services flex justify-center items-center flex-col  py-14 px-6 md:px-16 lg:px-32 lg:py-24 bg-[#101010]'>
           <h1 data-aos="fade-up" className="text-center text-white text-4xl md:text-6xl font-bold">Onze geweldige diensten.</h1>
           <p data-aos="fade-up" className="text-[#717173] text-lg md:text-xl font-light text-center pt-4 pb-12">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
           <div 

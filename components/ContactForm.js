@@ -1,76 +1,105 @@
-import { useRef, useEffect } from 'react';
-import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
-import AOS from 'aos';
+import { useRef, useEffect, createRef, useReducer, useState } from 'react';
 
 import emailjs from 'emailjs-com';
+import ReCAPTCHA from 'react-google-recaptcha';
 
-const ContactSchema = Yup.object().shape({
-    name: Yup.string()
-        .required('verplicht veld.'),
-    email: Yup.string()
-        .required('verplicht veld.')
-        .email('Vul een geldig emailadres in.'),
-    message: Yup.string()
-        .required('verplicht veld.')
-        .min(20, 'minimaal 20 karakters.')
-})
+import AOS from 'aos';
+
+const initialState = {
+    name: '',
+    email: '',
+    company: '',
+    message: '',
+  };
+
+  function reducer(state, action) {
+    switch (action.type) {
+      case 'name':
+        return { ...state, name: action.value };
+      case 'email':
+        return { ...state, email: action.value };
+      case 'company':
+        return { ...state, company: action.value };
+      case 'message':
+        return { ...state, message: action.value };
+      default:
+        throw new Error();
+    }
+  }
 
 const ContactForm = () => {
+    const [formState, dispatch] = useReducer(reducer, initialState);
+  const [showFormErr, setShowFormErr] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState({ title: '', paragraph: '' });
+  const [showCaptcha, setShowCaptcha] = useState(false);
+  const { name, email, message } = formState;
 
-    const form = useRef();
+  const submitFormAndShowCaptcha = (e) => {
+    e.preventDefault();
+    setShowCaptcha(true);
+  };
 
-    const sendEmail = () => {
-        emailjs.sendForm('service_2yyu7od', 'template_iplf3mq', form.current, 'user_IAcDtiyGrAvWKF1yWoq7j')
-            .then(result => {
-                <div>Thanks, {result.text}</div>
-            }, (error) => {
-                console.log(error.text)
-            });
+  const sendEmail = (captchaValue) => {
+    if (name === '' || email === '' || message === '') {
+      setShowFormErr(true);
+      return;
     }
 
-    useEffect(() => {
-        AOS.init();
-      })
+    const params = {
+      ...formState,
+      'g-recaptcha-response': captchaValue,
+    };
 
-    return (
-        <div>
-            <Formik
-                initialValues={{
-                    name: '',
-                    email: '',
-                    company: '',
-                    message: ''
-                }}
-                validationSchema={ ContactSchema }
-            >
-                {({ errors, touched }) => (
-                    <div>
-                        <Form ref={form} action="?" method="POST" className='flex flex-col gap-5'>
-                            <Field data-aos='fade-up' name='name' placeholder="Naam"  className='input-field'/>
-                            <Field data-aos='fade-up' data-aos-delay='150' name='email' placeholder="E-mail" className='input-field' />
-                            <Field data-aos='fade-up' data-aos-delay='200' name='company' placeholder="Bedrijf" className='input-field' />
-                            <Field data-aos='fade-up' data-aos-delay='250' name='message' placeholder="Bericht" as='textarea' className='input-field' />
-                            <div>
-                                <button 
-                                    className='border-2 border-[#F1D302] text-[#F1D302] px-4 py-2 rounded 
-                                        hover:bg-[#F1D302] hover:text-black transition-all active:scale-95' 
-                                    type='submit' 
-                                    onClick={() => sendEmail()}
-                                >Versturen</button>
-                            </div>
-                            <p className="text-gray-400 text-xs">
-                                This site is protected by reCAPTCHA and the Google
-                                <a className="text-blue-800" href="https://policies.google.com/privacy"> Privacy Policy</a> and
-                                <a className="text-blue-800" href="https://policies.google.com/terms"> Terms of Service</a> apply.
-                            </p>
-                        </Form>
-                    </div>
-                )}
-               
-            </Formik>
-        </div>
+    setFormSubmitted({ title: 'Bericht wordt verstuurd...', paragraph: '' });
+    emailjs.send(
+        'service_2yyu7od', 
+        'template_iplf3mq',
+      params,
+      'user_IAcDtiyGrAvWKF1yWoq7j',
     )
+      .then(({ status }) => {
+        if (status === 200) {
+          setFormSubmitted({ title: 'Bericht is verzonden!', paragraph: 'We zullen zo snel mogelijk contact met je opnemen.' });
+        } else {
+          setFormSubmitted({ title: 'Unexpected status code returned from EmailJS, try again later', paragraph: 'Please contact Bugg. either by phone or email.' });
+        }
+      }, (err) => {
+        // eslint-disable-next-line no-console
+        console.log(err);
+        setFormSubmitted({ title: 'Error sending message, try again later', paragraph: 'Please contact Bugg. either by phone or email.' });
+      });
+  };
+
+  return formSubmitted.title === '' ? (
+    <div>
+      {!showCaptcha ? (
+        <div>
+        <form onSubmit={submitFormAndShowCaptcha} className='flex flex-col gap-5'>
+            <input required data-aos='fade-up' name='name' placeholder="Naam"  className='input-field' onChange={(e) => dispatch({ type: 'name', value: e.target.value })}/>
+            <input required data-aos='fade-up' data-aos-delay='150' name='email' placeholder="E-mail" className='input-field' onChange={(e) => dispatch({ type: 'email', value: e.target.value })} />
+            <input required data-aos='fade-up' data-aos-delay='200' name='company' placeholder="Bedrijf" className='input-field' onChange={(e) => dispatch({ type: 'company', value: e.target.value })}/>
+            <input required data-aos='fade-up' data-aos-delay='250' name='message' placeholder="Bericht" type='textarea' className='input-field' onChange={(e) => dispatch({ type: 'message', value: e.target.value })}/>
+            <div>
+                <button 
+                    className='border-2 border-[#F1D302] text-[#F1D302] px-4 py-2 rounded 
+                        hover:bg-[#F1D302] hover:text-black transition-all active:scale-95' 
+                    type='submit' >Versturen</button>
+            </div>
+        </form>
+    </div>
+      ) : (
+        <ReCAPTCHA
+          sitekey="6LcNUg0dAAAAAHQnXRQeWjwF4t9ZS90FgLr8g1H7"
+          onChange={sendEmail}
+        />
+      )}
+    </div>
+  ) : (
+    <div className="flex flex-col items-center text-center">
+      <h3 className="text-2xl text-white">{formSubmitted.title}</h3>
+      <p className="text-white">{formSubmitted.paragraph}</p>
+    </div>
+  );  
 }
 
 export default ContactForm
