@@ -1,5 +1,6 @@
+import { useEffect } from 'react'
+
 import TextLoop from 'react-text-loop'
-import AOS from 'aos'
 import Head from 'next/head'
 import ContactForm from '../components/ContactForm'
 import Header from '../components/Header'
@@ -9,14 +10,8 @@ import Image from 'next/image'
 import landingImage from '../assets/images/landing-image.webp'
 import { ChevronDownIcon, CodeIcon, ChartBarIcon, FilmIcon } from '@heroicons/react/outline'
 import 'aos/dist/aos.css'
-import { useEffect } from 'react'
 
 export default function Home() {
-
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, [AOS])
 
   return (
     <div>
