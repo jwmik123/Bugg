@@ -4,6 +4,22 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        yellow: {
+          light: '#85d7ff',
+          DEFAULT: '#F1D302',
+          dark: '#009eeb',
+        },
+        gray: {
+          darkest: '#1f2d3d',
+          dark: '#3c4858',
+          DEFAULT: '#101010',
+          light: '#1d1d24',
+          lightest: '#f9fafc',
+        }
+      },
       outline: {
         yellow: '2px solid #F1D302'
       }

@@ -1,9 +1,7 @@
-import { useRef, useEffect, createRef, useReducer, useState } from 'react';
+import { useReducer, useState } from 'react';
 
 import emailjs from 'emailjs-com';
 import ReCAPTCHA from 'react-google-recaptcha';
-
-import AOS from 'aos';
 
 const initialState = {
     name: '',
@@ -78,7 +76,7 @@ const ContactForm = () => {
             <input required data-aos='fade-up' name='name' placeholder="Naam"  className='input-field' onChange={(e) => dispatch({ type: 'name', value: e.target.value })}/>
             <input required data-aos='fade-up' data-aos-delay='150' name='email' placeholder="E-mail" className='input-field' onChange={(e) => dispatch({ type: 'email', value: e.target.value })} />
             <input required data-aos='fade-up' data-aos-delay='200' name='company' placeholder="Bedrijf" className='input-field' onChange={(e) => dispatch({ type: 'company', value: e.target.value })}/>
-            <input required data-aos='fade-up' data-aos-delay='250' name='message' placeholder="Bericht" type='textarea' className='input-field' onChange={(e) => dispatch({ type: 'message', value: e.target.value })}/>
+            <textarea required data-aos='fade-up' data-aos-delay='250' name='message' placeholder="Bericht" className='input-field' onChange={(e) => dispatch({ type: 'message', value: e.target.value })}/>
             <div>
                 <button 
                     className='border-2 border-[#F1D302] text-[#F1D302] px-4 py-2 rounded 
