@@ -150,12 +150,9 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div
-              data-aos="zoom-in"
-              className="w-full sm:w-1/2 lg:w-1/3 h-[300px]"
-            >
-              <div className="group  bg-gray-light hover:bg-yellow m-5 p-10 rounded-lg flex flex-col hover:cursor-pointer md:hover:translate-y-3 transition-all duration-500">
-                <FilmIcon className="w-14 h-14 mb-5 text-yellow group-hover:text-gray-light" />
+            <div data-aos="zoom-in" className="w-full sm:w-1/2 lg:w-1/3 ">
+              <div className="group h-[300px] bg-gray-light hover:bg-yellow m-5 p-10 rounded-lg flex flex-col hover:cursor-pointer md:hover:translate-y-3 transition-all duration-500">
+                <FilmIcon className="w-[30px] h-[30px] mb-5 text-yellow group-hover:text-gray-light" />
                 <h2 className="mb-5 text-2xl text-white font-medium group-hover:text-gray-light">
                   Videoproducties & Animaties
                 </h2>
