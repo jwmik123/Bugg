@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 import animateScrollTo from "animated-scroll-to";
 import Image from "next/image";
 
-// import mapboxgl from "!mapbox-gl";
+import mapboxgl from "!mapbox-gl";
 
 import landingImage from "../assets/images/landing-image.webp";
 
@@ -36,36 +36,36 @@ import "mapbox-gl/dist/mapbox-gl.css";
 // import "owl.carousel/dist/assets/owl.carousel.css";
 // import "owl.carousel/dist/assets/owl.theme.default.css";
 
-// mapboxgl.accessToken =
-//   "pk.eyJ1IjoiamFsbGEiLCJhIjoiY2t0a2c1YTcwMWFtZjJxbzZqc3VvaGZhNiJ9.-x-5vY8REo7IrMeUzus26Q";
+mapboxgl.accessToken =
+  "pk.eyJ1IjoiamFsbGEiLCJhIjoiY2t0a2c1YTcwMWFtZjJxbzZqc3VvaGZhNiJ9.-x-5vY8REo7IrMeUzus26Q";
 
 export default function Home() {
-  // const mapContainer = useRef(null);
-  // const map = useRef(null);
-  // const [lng, setLng] = useState(4.87);
-  // const [lat, setLat] = useState(52.37);
-  // const [zoom, setZoom] = useState(14);
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const [lng, setLng] = useState(4.87);
+  const [lat, setLat] = useState(52.37);
+  const [zoom, setZoom] = useState(14);
 
-  // // const marker = new mapboxgl.Marker().setLngLat([4.87, 52.37]).addTo(map);
+  // const marker = new mapboxgl.Marker().setLngLat([4.87, 52.37]).addTo(map);
 
-  // useEffect(() => {
-  //   if (map.current) return; // initialize map only once
-  //   map.current = new mapboxgl.Map({
-  //     container: mapContainer.current,
-  //     style: "mapbox://styles/jalla/ckvwg1anm0rnl14n0z9h8mcwf",
-  //     center: [lng, lat],
-  //     zoom: zoom,
-  //   });
-  // });
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: "mapbox://styles/jalla/ckvwg1anm0rnl14n0z9h8mcwf",
+      center: [lng, lat],
+      zoom: zoom,
+    });
+  });
 
-  // useEffect(() => {
-  //   if (!map.current) return; // wait for map to initialize
-  //   map.current.on("move", () => {
-  //     setLng(map.current.getCenter().lng.toFixed(4));
-  //     setLat(map.current.getCenter().lat.toFixed(4));
-  //     setZoom(map.current.getZoom().toFixed(2));
-  //   });
-  // });
+  useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+    map.current.on("move", () => {
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+      setZoom(map.current.getZoom().toFixed(2));
+    });
+  });
   return (
     <div>
       <Head>
@@ -140,7 +140,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center">
             <div data-aos="zoom-in" className="w-full sm:w-1/2 lg:w-1/3">
               <div className="group h-[300px] bg-gray-light hover:bg-yellow m-5  p-10 rounded-lg flex flex-col hover:cursor-pointer md:hover:translate-y-3 transition-all duration-500">
-                <CodeIcon className="w-14 h-14 mb-5 text-yellow group-hover:text-gray-light" />
+                <LightBulbIcon className="w-14 h-14 mb-5 text-yellow group-hover:text-gray-light" />
                 <h2 className="mb-5 text-2xl text-white font-medium group-hover:text-gray-light">
                   Web Development
                 </h2>
@@ -152,7 +152,7 @@ export default function Home() {
             </div>
             <div data-aos="zoom-in" className="w-full sm:w-1/2 lg:w-1/3">
               <div className="group h-[300px] bg-gray-light hover:bg-yellow m-5 p-10 rounded-lg flex flex-col hover:cursor-pointer md:hover:translate-y-3 transition-all duration-500">
-                <FilmIcon className="w-14 h-14 mb-5 text-yellow group-hover:text-gray-light" />
+                <LightBulbIcon className="w-14 h-14 mb-5 text-yellow group-hover:text-gray-light" />
                 <h2 className="mb-5 text-2xl text-white font-medium group-hover:text-gray-light">
                   Videoproducties & Animaties
                 </h2>
@@ -376,7 +376,7 @@ export default function Home() {
             <ContactForm />
           </div>
         </section>
-        {/* <div ref={mapContainer} className="map-container h-64 z-50" /> */}
+        <div ref={mapContainer} className="map-container h-64 z-50" />
       </main>
 
       <Footer />
