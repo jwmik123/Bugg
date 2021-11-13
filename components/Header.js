@@ -35,7 +35,7 @@ function Header() {
       <header
         className={
           colorChange
-            ? "bg-gray flex justify-between text-white px-5 md:px-20 py-2 fixed z-50 w-full transition-all"
+            ? "bg-yellow flex justify-between text-gray px-5 md:px-20 py-2 fixed z-50 w-full transition-all"
             : "flex justify-between text-white px-5 md:px-20 py-5 fixed z-50 w-full"
         }
       >
@@ -71,7 +71,11 @@ function Header() {
             onClick={() => {
               animateScrollTo(document.querySelector(".contact"));
             }}
-            className="border-2 border-yellow text-yellow px-4 py-2 rounded hover:bg-yellow hover:text-black transition-all active:scale-95"
+            className={
+              colorChange
+                ? "border-2 border-gray text-gray px-4 py-2 rounded hover:bg-gray hover:text-yellow transition-all active:scale-95"
+                : "border-2 border-yellow text-yellow px-4 py-2 rounded hover:bg-yellow hover:text-black transition-all active:scale-95"
+            }
           >
             Start een project
           </button>
