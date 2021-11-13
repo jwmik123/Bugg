@@ -300,7 +300,7 @@ export default function Home() {
 
         {/* About Us Section */}
         {/* <section className="flex gap-10 py-14 md:px-32 lg:px-24 xl:px-64 lg:py-24 bg-gray-light"></section> */}
-        <section className="contact flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 bg-gray">
+        <section className="about flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 bg-gray">
           <div className="w-10/12 lg:w-1/2">
             <Image
               src="https://via.placeholder.com/350"

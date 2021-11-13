@@ -63,8 +63,20 @@ function Header() {
           >
             Diensten
           </button>
-          <button>Over Ons</button>
-          <button>Contact</button>
+          <button
+            onClick={() => {
+              animateScrollTo(document.querySelector(".about"));
+            }}
+          >
+            Over Ons
+          </button>
+          <button
+            onClick={() => {
+              animateScrollTo(document.querySelector(".contact"));
+            }}
+          >
+            Contact
+          </button>
         </div>
         <div className="hidden lg:block">
           <button
