@@ -89,96 +89,6 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        {/* <section className="services flex justify-center items-center flex-col py-14 px-6 md:px-16 lg:px-16 lg:py-24 bg-gray">
-          <h1
-            data-aos="fade-up"
-            className="text-center text-white text-4xl md:text-6xl font-bold"
-          >
-            Onze geweldige diensten.
-          </h1>
-          <p
-            data-aos="fade-up"
-            className="text-[#717173] text-lg md:text-xl font-light text-center pt-4 pb-12"
-          >
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration.
-          </p>
-          <div className="flex flex-wrap justify-center">
-            <div data-aos="zoom-in" className="w-full sm:w-1/2 lg:w-1/3">
-              <div className="group h-[300px] bg-gray-light hover:bg-yellow m-5  p-10 rounded-lg flex flex-col hover:cursor-pointer md:hover:translate-y-3 transition-all duration-500">
-                <CodeIcon className="w-[50px] h-[50px] mb-5 text-yellow group-hover:text-gray-light" />
-                <h2 className="mb-5 text-2xl text-white font-medium group-hover:text-gray-light">
-                  Web Development
-                </h2>
-                <p className="text-[#717173] font-light text-lg group-hover:text-gray-light">
-                  Voor een groter bereik op Social Media en betere vindbaarheid
-                  op Google.
-                </p>
-              </div>
-            </div>
-            <div data-aos="zoom-in" className="w-full sm:w-1/2 lg:w-1/3 ">
-              <div className="group h-[300px] bg-gray-light hover:bg-yellow m-5 p-10 rounded-lg flex flex-col hover:cursor-pointer md:hover:translate-y-3 transition-all duration-500">
-                <FilmIcon className="w-14 h-14 mb-5 text-yellow group-hover:text-gray-light" />
-                <h2 className="mb-5 text-2xl text-white font-medium group-hover:text-gray-light">
-                  Videoproducties & Animaties
-                </h2>
-                <p className="text-[#717173] font-light text-lg group-hover:text-gray-light">
-                  Voor een groter bereik op Social Media en betere vindbaarheid
-                  op Google.
-                </p>
-              </div>
-            </div>
-            <div data-aos="zoom-in" className="w-full sm:w-1/2 lg:w-1/3">
-              <div className="group h-[300px] bg-gray-light hover:bg-yellow m-5  p-10 rounded-lg flex flex-col hover:cursor-pointer md:hover:translate-y-3 transition-all duration-500">
-                <LightBulbIcon className="w-14 h-14 mb-5 text-yellow group-hover:text-gray-light" />
-                <h2 className="mb-5 text-2xl text-white font-medium group-hover:text-gray-light">
-                  UX Design
-                </h2>
-                <p className="text-[#717173] font-light text-lg group-hover:text-gray-light">
-                  Voor een groter bereik op Social Media en betere vindbaarheid
-                  op Google.
-                </p>
-              </div>
-            </div>
-            <div data-aos="zoom-in" className="w-full sm:w-1/2 lg:w-1/3">
-              <div className="group h-[300px] bg-gray-light hover:bg-yellow m-5  p-10 rounded-lg flex flex-col hover:cursor-pointer md:hover:translate-y-3 transition-all duration-500">
-                <ShoppingCartIcon className="w-14 h-14 mb-5 text-yellow group-hover:text-gray-light" />
-                <h2 className="mb-5 text-2xl text-white font-medium group-hover:text-gray-light">
-                  Webshops & E-commerce
-                </h2>
-                <p className="text-[#717173] font-light text-lg group-hover:text-gray-light">
-                  Voor een groter bereik op Social Media en betere vindbaarheid
-                  op Google.
-                </p>
-              </div>
-            </div>
-            <div data-aos="zoom-in" className="w-full sm:w-1/2 lg:w-1/3">
-              <div className="group h-[300px] bg-gray-light hover:bg-yellow m-5  p-10 rounded-lg flex flex-col hover:cursor-pointer md:hover:translate-y-3 transition-all duration-500">
-                <DocumentTextIcon className="w-14 h-14 mb-5 text-yellow group-hover:text-gray-light" />
-                <h2 className="mb-5 text-2xl text-white font-medium group-hover:text-gray-light">
-                  Copywriting & SEO
-                </h2>
-                <p className="text-[#717173] font-light text-lg group-hover:text-gray-light">
-                  Voor een groter bereik op Social Media en betere vindbaarheid
-                  op Google.
-                </p>
-              </div>
-            </div>
-            <div data-aos="zoom-in" className="w-full sm:w-1/2 lg:w-1/3">
-              <div className="group h-[300px] bg-gray-light hover:bg-yellow m-5 p-10 rounded-lg flex flex-col hover:cursor-pointer md:hover:translate-y-3 transition-all duration-500">
-                <UsersIcon className="w-14 h-14 mb-5 text-yellow group-hover:text-gray-light" />
-                <h2 className="mb-5 text-2xl text-white font-medium group-hover:text-gray-light">
-                  Social Media Strategie
-                </h2>
-                <p className="text-[#717173] font-light text-lg group-hover:text-gray-light">
-                  Voor een groter bereik op Social Media en betere vindbaarheid
-                  op Google.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         <section className="services flex flex-col items-center justify-center bg-gray py-14 px-6 md:px-16 lg:px-16">
           <h1
             data-aos="fade-up"
@@ -204,23 +114,9 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          {/* <div data-aos="zoom-in" className="w-full sm:w-1/2 lg:w-1/3">
-            <div className="group h-[300px] bg-gray-light hover:bg-yellow m-5  p-10 rounded-lg flex flex-col hover:cursor-pointer md:hover:translate-y-3 transition-all duration-500">
-              <CodeIcon className="w-[50px] h-[50px] mb-5 text-yellow group-hover:text-gray-light" />
-              <h2 className="mb-5 text-2xl text-white font-medium group-hover:text-gray-light">
-                {services.name}
-              </h2>
-              <p className="text-[#717173] font-light text-lg group-hover:text-gray-light">
-                Voor een groter bereik op Social Media en betere vindbaarheid op
-                Google.
-              </p>
-            </div>
-          </div> */}
         </section>
 
         {/* About Us Section */}
-        {/* <section className="flex gap-10 py-14 md:px-32 lg:px-24 xl:px-64 lg:py-24 bg-gray-light"></section> */}
         <section className="about flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 bg-gray">
           <div className="w-10/12 lg:w-1/2">
             <Image
