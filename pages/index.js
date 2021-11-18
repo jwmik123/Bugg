@@ -105,11 +105,20 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap">
             {services.map((elem, i) => (
-              <div key={elem.id} className="w-full sm:w-1/2 lg:w-1/3 flex">
-                <div className="bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center">
+              <div
+                key={elem.id}
+                className="w-full sm:w-1/2 lg:w-1/3 flex"
+                data-aos="fade-up"
+                data-aos-delay={elem.delay}
+              >
+                <div className="group bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:translate-y-2 transition-all">
                   <div>{elem.logo}</div>
-                  <h2 className="py-5 text-2xl text-white">{elem.name}</h2>
-                  <p className="text-lg text-[#717173]">{elem.bio}</p>
+                  <h2 className="py-5 text-2xl text-white group-hover:text-gray">
+                    {elem.name}
+                  </h2>
+                  <p className="text-lg text-[#717173] font-light group-hover:text-gray">
+                    {elem.bio}
+                  </p>
                 </div>
               </div>
             ))}
