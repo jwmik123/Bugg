@@ -1,35 +1,56 @@
 import { useState } from "react";
-import { getCenter } from "geolib";
-import ReactMapGL, { Marker } from "react-map-gl";
+import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import Image from "next/image";
 
-import { LocationMarkerIcon } from "@heroicons/react/outline";
+import locationMarker from "../assets/images/location-marker.png";
+
+import "mapbox-gl/dist/mapbox-gl.css";
 
 function Map() {
   const coords = {
-    long: 4.87,
-    lat: 52.37,
+    long: 4.86648,
+    lat: 52.365921,
   };
-
-  const center = getCenter(coords);
 
   const [viewport, setViewport] = useState({
     width: "100%",
     height: "100%",
-    latitude: center.latitude,
-    longitude: center.longitude,
-    zoom: 14,
+    latitude: coords.lat,
+    longitude: coords.long,
+    zoom: 11,
   });
+
+  const [selectedLocation, setSelectedLocation] = useState(false);
 
   return (
     <ReactMapGL
       mapStyle="mapbox://styles/jalla/ckvwg1anm0rnl14n0z9h8mcwf"
-      mapboxApiAccessToken="pk.eyJ1IjoiamFsbGEiLCJhIjoiY2t0a2c1YTcwMWFtZjJxbzZqc3VvaGZhNiJ9.-x-5vY8REo7IrMeUzus26Q"
+      mapboxApiAccessToken={process.env.mapbox_token}
       {...viewport}
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
     >
-      <Marker longitude={coords.long} latitude={coords.lat}>
-        <LocationMarkerIcon className="w-10 h-10 text-yellow" />
+      <Marker
+        longitude={coords.long}
+        latitude={coords.lat}
+        onClick={() => setSelectedLocation(true)}
+      >
+        <Image src={locationMarker} width="36px" height="36px" />
       </Marker>
+      {selectedLocation ? (
+        <Popup
+          closeOnClick={true}
+          onClose={() => setSelectedLocation(false)}
+          latitude={coords.lat}
+          longitude={coords.long}
+        >
+          <div className="rounded-full bg-white">
+            <div>
+              <p className="font-semibold">BUGG.</p>
+              <p>Kinkerstraat 208-2, Amsterdam</p>
+            </div>
+          </div>
+        </Popup>
+      ) : null}
     </ReactMapGL>
   );
 }
