@@ -21,10 +21,10 @@
   }
 
   .logo {
-    @apply w-full h-full text-yellow hover:text-gray;
+    @apply w-full h-full text-yellow group-hover:text-gray;
   }
 
-  .h1,
+  h1,
   h2,
   h3,
   h4,
