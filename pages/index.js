@@ -12,15 +12,7 @@ import { services } from "../assets/dataList/dataList";
 
 import landingImage from "../assets/images/landing-image.webp";
 
-import {
-  ChevronDownIcon,
-  CodeIcon,
-  FilmIcon,
-  ShoppingCartIcon,
-  UsersIcon,
-  LightBulbIcon,
-  DocumentTextIcon,
-} from "@heroicons/react/outline";
+import { ChevronDownIcon } from "@heroicons/react/outline";
 
 import {
   LocationMarkerIcon,
@@ -112,7 +104,7 @@ export default function Home() {
                 data-aos-delay={elem.delay}
               >
                 <div className="group bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:translate-y-2 transition-all">
-                  <div>{elem.logo}</div>
+                  <div className="w-14">{elem.logo}</div>
                   <h2 className="py-5 text-2xl text-white group-hover:text-gray">
                     {elem.name}
                   </h2>

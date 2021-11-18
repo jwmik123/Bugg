@@ -2,29 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import '../node_modules/atropos/atropos.css';
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "../node_modules/atropos/atropos.css";
 
 @layer components {
-    .menu-item {
-        @apply cursor-pointer py-1 px-4 
-               transition transform duration-100
-    }
+  .menu-item {
+    @apply cursor-pointer py-1 px-4 
+               transition transform duration-100;
+  }
 
-    .input-field {
-        @apply focus:outline-yellow bg-[#1d1d24] px-5 py-3 rounded-lg w-full text-white
-    }
+  .input-field {
+    @apply focus:outline-yellow bg-[#1d1d24] px-5 py-3 rounded-lg w-full text-white;
+  }
 
-    .form-error {
-        @apply 
-    }
+  .form-error {
+    @apply;
+  }
 
-    .h1, h2, h3, h4, h5, p {
-        @apply font-poppins
-    }
+  .logo {
+    @apply w-full h-full text-yellow hover:text-gray;
+  }
+
+  .h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    @apply font-poppins;
+  }
 }
 
 body {
-    background: rgb(22,24,22);
+  background: rgb(22, 24, 22);
 }
