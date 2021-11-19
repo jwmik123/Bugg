@@ -43,10 +43,10 @@ export default function Home() {
             objectFit="cover"
             objectPosition="center"
           />
-          <div className="absolute flex flex-col gap-1 md:gap-3 font-bold">
+          <div className="absolute flex flex-col gap-1 md:gap-3">
             <h1
               data-aos="flip-down"
-              className="text-white text-4xl md:text-7xl lg:text-8xl"
+              className="text-white text-4xl md:text-7xl lg:text-8xl font-bold"
             >
               Hi, welkom bij Bugg.
             </h1>
