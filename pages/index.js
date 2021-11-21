@@ -46,7 +46,7 @@ export default function Home() {
           <div className="absolute flex flex-col gap-1 md:gap-3">
             <h1
               data-aos="flip-down"
-              className="text-white text-4xl md:text-7xl lg:text-8xl font-bold"
+              className="text-white text-4xl md:text-7xl lg:text-8xl font-poppins font-bold"
             >
               Hi, welkom bij Bugg.
             </h1>
@@ -84,7 +84,7 @@ export default function Home() {
         <section className="services flex flex-col items-center justify-center bg-gray py-14 px-6 md:px-16 lg:px-16">
           <h1
             data-aos="fade-up"
-            className="text-4xl md:text-6xl font-bold text-white"
+            className="text-4xl md:text-6xl font-extrabold text-white text-center"
           >
             Onze geweldige diensten.
           </h1>
@@ -105,7 +105,7 @@ export default function Home() {
               >
                 <div className="group bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:translate-y-2 transition-all">
                   <div className="w-14">{elem.logo}</div>
-                  <h2 className="py-5 text-2xl text-white group-hover:text-gray">
+                  <h2 className="py-5 text-2xl text-white font-bold group-hover:text-gray">
                     {elem.name}
                   </h2>
                   <p className="text-lg text-[#717173] font-light group-hover:text-gray">
@@ -119,7 +119,7 @@ export default function Home() {
 
         {/* About Us Section */}
         <section className="about flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 bg-gray">
-          <div className="w-10/12 lg:w-1/2">
+          <div data-aos="fade-up" className="w-10/12 lg:w-1/2 mb-6">
             <Image
               src="https://via.placeholder.com/350"
               width="350px"
@@ -131,11 +131,14 @@ export default function Home() {
           <div className="pr-5 w-10/12 lg:w-1/2">
             <h1
               data-aos="fade-up"
-              className="text-white text-4xl md:text-6xl font-bold"
+              className="text-white text-4xl md:text-6xl font-extrabold"
             >
               Wij zijn Bugg.
             </h1>
-            <p className="text-white font-light text-lg my-5">
+            <p
+              data-aos="fade-up"
+              className="text-white font-light text-lg my-5"
+            >
               We zijn altijd op zoek naar nieuwe projecten en nieuwe connecties!
               Stuur ons gerust een bericht. We zijn altijd op zoek naar nieuwe
               projecten en nieuwe connecties! Stuur ons gerust een bericht.We
@@ -144,7 +147,7 @@ export default function Home() {
               projecten en nieuwe connecties! Stuur ons gerust een bericht.
             </p>
 
-            <div className="flex mb-5">
+            <div data-aos="fade-up" className="flex mb-5">
               <span className="mr-2">
                 <MailIcon className="w-5 h-5 text-yellow" />
               </span>
@@ -160,35 +163,47 @@ export default function Home() {
           <div className="pr-5 w-10/12 lg:w-1/2">
             <h1
               data-aos="fade-up"
-              className="text-white text-4xl md:text-6xl font-bold"
+              className="text-white text-4xl md:text-6xl font-extrabold"
             >
               Laten we samen een project starten.
             </h1>
-            <p className="text-[#717173] font-light text-lg my-5">
+            <p
+              data-aos="fade-up"
+              className="text-[#717173] font-light text-lg my-5"
+            >
               We zijn altijd op zoek naar nieuwe projecten en nieuwe connecties!
               Stuur ons gerust een bericht.
             </p>
-            <div className="flex mb-2">
-              <span className="mr-2">
-                <LocationMarkerIcon className="w-5 h-5 text-yellow" />
-              </span>
-              <p className="text-white">Kinkerstraat 208, Amsterdam</p>
-            </div>
-            <div className="flex mb-2">
-              <span className="mr-2">
-                <PhoneIcon className="w-5 h-5 text-yellow" />
-              </span>
-              <p className="text-white">
-                <a href="tel:+31640395455">+31 6 40395455</a>
-              </p>
-            </div>
-            <div className="flex mb-5">
-              <span className="mr-2">
-                <MailIcon className="w-5 h-5 text-yellow" />
-              </span>
-              <p className="text-white">
-                <a href="mailto:tommy@bugg.amsterdam">hello@bugg.amsterdam</a>
-              </p>
+            <div data-aos="fade-up">
+              <div className="flex mb-2">
+                <span className="mr-2">
+                  <LocationMarkerIcon className="w-5 h-5 text-yellow" />
+                </span>
+                <p className="text-white">
+                  <a
+                    target="_blank"
+                    href="http://maps.google.com/?daddr=Kinkerstraat+208,+Amsterdam"
+                  >
+                    Kinkerstraat 208, Amsterdam
+                  </a>
+                </p>
+              </div>
+              <div className="flex mb-2">
+                <span className="mr-2">
+                  <PhoneIcon className="w-5 h-5 text-yellow" />
+                </span>
+                <p className="text-white">
+                  <a href="tel:+31640395455">+31 6 40395455</a>
+                </p>
+              </div>
+              <div className="flex mb-5">
+                <span className="mr-2">
+                  <MailIcon className="w-5 h-5 text-yellow" />
+                </span>
+                <p className="text-white">
+                  <a href="mailto:tommy@bugg.amsterdam">hello@bugg.amsterdam</a>
+                </p>
+              </div>
             </div>
           </div>
           <div className="w-10/12 lg:w-1/2">

@@ -26,7 +26,7 @@ module.exports = {
     },
     fontFamily: {
       staat: ["Staatliches", "cursive"],
-      poppins: ["Poppins"],
+      poppins: ["Poppins", "sans-serif"],
     },
     backdropGrayscale: {
       50: ".5",

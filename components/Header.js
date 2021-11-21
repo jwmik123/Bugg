@@ -42,7 +42,7 @@ function Header() {
         <div>
           <h1 className="font-staat text-4xl md:text-5xl leading-10">BUGG.</h1>
         </div>
-        <div className="flex items-center md:hidden">
+        {/* <div className="flex items-center md:hidden">
           {!toggle ? (
             <MenuIcon
               className="w-8 h-8 cursor-pointer"
@@ -54,8 +54,8 @@ function Header() {
               onClick={() => toggleMenu()}
             />
           )}
-        </div>
-        <div className="hidden md:flex items-center gap-20 text-base font-medium">
+        </div> */}
+        <div className="hidden md:flex items-center gap-20 text-base font-poppins font-medium">
           <button
             onClick={() => {
               animateScrollTo(document.querySelector(".services"));
@@ -78,15 +78,15 @@ function Header() {
             Contact
           </button>
         </div>
-        <div className="hidden lg:block">
+        <div>
           <button
             onClick={() => {
               animateScrollTo(document.querySelector(".contact"));
             }}
             className={
               colorChange
-                ? "border-2 border-gray text-gray px-4 py-2 rounded hover:bg-gray hover:text-yellow transition-all active:scale-95"
-                : "border-2 border-yellow text-yellow px-4 py-2 rounded hover:bg-yellow hover:text-black transition-all active:scale-95"
+                ? "border-2 font-poppins border-gray text-gray px-4 py-2 rounded hover:bg-gray hover:text-yellow transition-all active:scale-95"
+                : "border-2 font-poppins border-yellow text-yellow px-4 py-2 rounded hover:bg-yellow hover:text-black transition-all active:scale-95"
             }
           >
             Start een project
