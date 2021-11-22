@@ -163,7 +163,10 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section className="contact flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 lg:py-24 bg-gray">
+        <section
+          id="contact"
+          className="contact flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 lg:py-24 bg-gray"
+        >
           <div className="pr-5 w-10/12 lg:w-1/2">
             <h1
               data-aos="fade-up"
@@ -188,7 +191,7 @@ export default function Home() {
                     target="_blank"
                     href="http://maps.google.com/?daddr=Kinkerstraat+208,+Amsterdam"
                   >
-                    Kinkerstraat 208, Amsterdam
+                    Kinkerstraat 208-2, Amsterdam
                   </a>
                 </p>
               </div>
