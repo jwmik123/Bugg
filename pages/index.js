@@ -6,6 +6,7 @@ import Image from "next/image";
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
 import Map from "../components/Map";
+import Cases from "../components/Cases";
 import Footer from "../components/Footer";
 
 import { services } from "../assets/dataList/dataList";
@@ -52,7 +53,7 @@ export default function Home() {
             </h1>
             <div data-aos="flip-down" data-aos-delay="150">
               <TextLoop
-                className="text-yellow text-2xl md:text-5xl"
+                className="text-yellow text-2xl md:text-5xl font-poppins"
                 springConfig={{ stiffness: 60, damping: 11 }}
                 children={[
                   "Web Development",
@@ -67,7 +68,7 @@ export default function Home() {
             <h3
               data-aos="flip-down"
               data-aos-delay="300"
-              className="text-white ml-1 text-1xl md:text-4xl"
+              className="text-white ml-1 text-1xl md:text-4xl font-poppins"
             >
               In Amsterdam
             </h3>
@@ -105,7 +106,7 @@ export default function Home() {
               >
                 <div className="group bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:translate-y-2 transition-all">
                   <div className="w-14">{elem.logo}</div>
-                  <h2 className="py-5 text-2xl text-white font-bold group-hover:text-gray">
+                  <h2 className="py-5 text-2xl text-white font-poppinsl font-bold group-hover:text-gray">
                     {elem.name}
                   </h2>
                   <p className="text-lg text-[#717173] font-light group-hover:text-gray">
@@ -116,6 +117,9 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        {/* Cases Section */}
+        <Cases />
 
         {/* About Us Section */}
         <section className="about flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 bg-gray">
