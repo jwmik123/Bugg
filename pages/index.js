@@ -12,6 +12,7 @@ import Footer from "../components/Footer";
 import { services } from "../assets/dataList/dataList";
 
 import landingImage from "../assets/images/landing-image.webp";
+import team_joel from "../assets/images/joel.webp";
 
 import { ChevronDownIcon } from "@heroicons/react/outline";
 
@@ -125,7 +126,7 @@ export default function Home() {
         <section className="about flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 bg-gray">
           <div data-aos="fade-up" className="w-10/12 lg:w-1/2 mb-6">
             <Image
-              src="https://via.placeholder.com/350"
+              src={team_joel}
               width="350px"
               height="350px"
               objectFit="cover"
