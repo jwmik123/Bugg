@@ -2,6 +2,15 @@ import Head from "next/head";
 import TextLoop from "react-text-loop";
 import animateScrollTo from "animated-scroll-to";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+// import { EffectFade } from "swiper";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper";
 
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
@@ -23,13 +32,20 @@ import {
 } from "@heroicons/react/solid";
 
 import "aos/dist/aos.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export default function Home() {
+  SwiperCore.use([Autoplay]);
   return (
     <div>
       <Head>
         <title>Bugg.</title>
         <link rel="icon" href="/favicon.ico" />
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <link rel="stylesheet" href="owl-carousel/owl.theme.css"></link>
       </Head>
 
       {/* Header */}
@@ -81,7 +97,6 @@ export default function Home() {
             />
           </div>
         </section>
-
         {/* Services Section */}
         <section className="services flex flex-col items-center justify-center bg-gray py-14 px-6 md:px-16 lg:px-16">
           <h1
@@ -123,15 +138,50 @@ export default function Home() {
         <Cases />
 
         {/* About Us Section */}
-        <section className="about flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 bg-gray">
-          <div data-aos="fade-up" className="w-10/12 lg:w-1/2 mb-6">
-            <Image
-              src={team_joel}
-              width="350px"
-              height="350px"
-              objectFit="cover"
-              objectPosition="center"
-            />
+        <section className="about flex flex-col gap-2 items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 bg-gray">
+          <div
+            data-aos="fade-up"
+            className="w-10/12 lg:w-1/2 mb-6 flex justify-center items-center"
+          >
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={10}
+              slidesPerView={1}
+              autoplay={{ delay: 2000 }}
+              loop={true}
+              className="w-1/2"
+            >
+              <SwiperSlide>
+                <Image
+                  src={team_joel}
+                  className=" rounded-lg"
+                  width="350px"
+                  height="350px"
+                  objectFit="cover"
+                  objectPosition="center"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  src={team_joel}
+                  className=" rounded-lg"
+                  width="350px"
+                  height="350px"
+                  objectFit="cover"
+                  objectPosition="center"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  src={team_joel}
+                  className=" rounded-lg"
+                  width="350px"
+                  height="350px"
+                  objectFit="cover"
+                  objectPosition="center"
+                />
+              </SwiperSlide>
+            </Swiper>
           </div>
           <div className="pr-5 w-10/12 lg:w-1/2">
             <h1
@@ -162,7 +212,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* Contact Section */}
         <section
           id="contact"
