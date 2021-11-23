@@ -149,7 +149,7 @@ export default function Home() {
               slidesPerView={1}
               autoplay={{ delay: 2000 }}
               loop={true}
-              className="w-1/2"
+              className="w-full lg:w-1/2"
             >
               <SwiperSlide>
                 <Image
