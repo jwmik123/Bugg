@@ -3,7 +3,6 @@ import TextLoop from "react-text-loop";
 import animateScrollTo from "animated-scroll-to";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { EffectFade } from "swiper";
 import SwiperCore, {
   Navigation,
   Pagination,
@@ -11,6 +10,8 @@ import SwiperCore, {
   A11y,
   Autoplay,
 } from "swiper";
+
+// import AnimatedCursor from "react-animated-cursor";
 
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
@@ -25,6 +26,8 @@ import team_joel from "../assets/images/joel.webp";
 
 import { ChevronDownIcon } from "@heroicons/react/outline";
 
+import "../pages/animations.js";
+
 import {
   LocationMarkerIcon,
   PhoneIcon,
@@ -36,6 +39,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+
+import dynamic from "next/dynamic";
+
+const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
+  ssr: false,
+});
 
 export default function Home() {
   SwiperCore.use([Autoplay]);
@@ -52,8 +61,14 @@ export default function Home() {
       <Header />
 
       {/* Cursor */}
-      <div className="cursor"></div>
-      <div className="cursor2"></div>
+      <AnimatedCursor
+        innerSize={10}
+        outerSize={50}
+        color="241, 211, 2"
+        outerAlpha={0.2}
+        innerScale={0.5}
+        outerScale={1.5}
+      />
 
       <main>
         {/* Landing Section */}
@@ -157,6 +172,7 @@ export default function Home() {
             <p
               data-aos="fade-up"
               className="text-white font-light text-lg my-5 tekst"
+              id="tekst"
             >
               We zijn altijd op zoek naar nieuwe projecten en nieuwe connecties!
               Stuur ons gerust een bericht. We zijn altijd op zoek naar nieuwe
