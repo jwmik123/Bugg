@@ -143,7 +143,7 @@ export default function Home() {
             data-aos="fade-up"
             className="w-10/12 lg:w-1/2 mb-6 flex justify-center items-center"
           >
-            <Swiper
+            {/* <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={10}
               slidesPerView={1}
@@ -181,7 +181,7 @@ export default function Home() {
                   objectPosition="center"
                 />
               </SwiperSlide>
-            </Swiper>
+            </Swiper> */}
           </div>
           <div className="pr-5 w-10/12 lg:w-1/2">
             <h1
