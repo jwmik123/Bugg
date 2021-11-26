@@ -64,7 +64,8 @@ export default function Home() {
       <AnimatedCursor
         innerSize={10}
         outerSize={50}
-        color="241, 211, 2"
+        // color="241, 211, 2"
+        color="255,255,255"
         outerAlpha={0.2}
         innerScale={0.5}
         outerScale={1.5}

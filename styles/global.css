@@ -100,3 +100,7 @@ body {
 #tekst:hover ~ .cursor {
   transform: scale(1.5);
 } */
+
+#tekst:hover ~ .cursor {
+  background-color: black;
+}
