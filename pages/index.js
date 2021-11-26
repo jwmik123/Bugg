@@ -53,7 +53,7 @@ export default function Home() {
 
       <div
         id="cursor"
-        className="absolute w-12 h-12 border-2 border-yellow box-border rounded-full z-50"
+        className="hidden md:block absolute w-12 h-12 border-2 border-yellow box-border rounded-full z-50 pointer-events-none"
       ></div>
 
       <main>
