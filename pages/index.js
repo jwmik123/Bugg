@@ -40,7 +40,7 @@ import "swiper/css/scrollbar";
 export default function Home() {
   SwiperCore.use([Autoplay]);
   return (
-    <div>
+    <div className="cursor-not-allowed">
       <Head>
         <title>Bugg.</title>
         <link rel="icon" href="/favicon.ico" />
@@ -50,6 +50,11 @@ export default function Home() {
 
       {/* Header */}
       <Header />
+
+      <div
+        id="cursor"
+        className="absolute w-12 h-12 border-2 border-yellow box-border rounded-full z-50"
+      ></div>
 
       <main>
         {/* Landing Section */}

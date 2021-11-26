@@ -22,6 +22,15 @@ Router.events.on("routeChangeError", progress.finish);
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     AOS.init();
+
+    let cursor = document.getElementById("cursor");
+
+    document.addEventListener("mousemove", function (e) {
+      let x = e.pageX;
+      let y = e.pageY;
+      cursor.style.left = x - 25 + "px";
+      cursor.style.top = y - 20 + "px";
+    });
   }, []);
   return <Component {...pageProps} />;
 }
