@@ -51,10 +51,9 @@ export default function Home() {
       {/* Header */}
       <Header />
 
-      <div
-        id="cursor"
-        className="hidden md:block absolute w-12 h-12 border-2 border-yellow box-border rounded-full z-50 pointer-events-none"
-      ></div>
+      {/* Cursor */}
+      <div className="cursor"></div>
+      <div className="cursor2"></div>
 
       <main>
         {/* Landing Section */}
@@ -125,7 +124,7 @@ export default function Home() {
                 data-aos="fade-up"
                 data-aos-delay={elem.delay}
               >
-                <div className="group bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:translate-y-2 transition-all">
+                <div className="group service-item bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:translate-y-2 transition-all">
                   <div className="w-14">{elem.logo}</div>
                   <h2 className="py-5 text-2xl text-white font-poppinsl font-bold group-hover:text-gray">
                     {elem.name}
@@ -147,47 +146,7 @@ export default function Home() {
           <div
             data-aos="fade-up"
             className="w-10/12 lg:w-1/2 mb-6 flex justify-center items-center"
-          >
-            {/* <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={10}
-              slidesPerView={1}
-              autoplay={{ delay: 2000 }}
-              loop={true}
-              className="w-full lg:w-1/2"
-            >
-              <SwiperSlide>
-                <Image
-                  src={team_joel}
-                  className=" rounded-lg"
-                  width="350px"
-                  height="350px"
-                  objectFit="cover"
-                  objectPosition="center"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  src={team_joel}
-                  className=" rounded-lg"
-                  width="350px"
-                  height="350px"
-                  objectFit="cover"
-                  objectPosition="center"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  src={team_joel}
-                  className=" rounded-lg"
-                  width="350px"
-                  height="350px"
-                  objectFit="cover"
-                  objectPosition="center"
-                />
-              </SwiperSlide>
-            </Swiper> */}
-          </div>
+          ></div>
           <div className="pr-5 w-10/12 lg:w-1/2">
             <h1
               data-aos="fade-up"
@@ -197,7 +156,7 @@ export default function Home() {
             </h1>
             <p
               data-aos="fade-up"
-              className="text-white font-light text-lg my-5"
+              className="text-white font-light text-lg my-5 tekst"
             >
               We zijn altijd op zoek naar nieuwe projecten en nieuwe connecties!
               Stuur ons gerust een bericht. We zijn altijd op zoek naar nieuwe
