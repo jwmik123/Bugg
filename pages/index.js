@@ -75,7 +75,7 @@ export default function Home() {
         {/* Landing Section */}
         <section className="relative h-[40vh] md:h-[100vh] flex items-center justify-center md:justify-start md:px-32 lg:px-24 xl:px-64">
           <Image
-            className="opacity-30"
+            className="opacity-40"
             src={landingImage}
             layout="fill"
             objectFit="cover"
