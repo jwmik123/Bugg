@@ -1,17 +1,12 @@
+import Image from "next/image";
+import Link from "next/link";
 import Head from "next/head";
+import { useRouter } from "next/router";
+
 import TextLoop from "react-text-loop";
 import animateScrollTo from "animated-scroll-to";
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Autoplay,
-} from "swiper";
-
-// import AnimatedCursor from "react-animated-cursor";
+import SwiperCore, { Autoplay } from "swiper";
 
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
@@ -26,7 +21,10 @@ import team_joel from "../assets/images/joel.webp";
 
 import { ChevronDownIcon } from "@heroicons/react/outline";
 
-import "../pages/animations.js";
+import dynamic from "next/dynamic";
+const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
+  ssr: false,
+});
 
 import {
   LocationMarkerIcon,
@@ -40,14 +38,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-import dynamic from "next/dynamic";
-
-const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
-  ssr: false,
-});
-
 export default function Home() {
+  const router = useRouter();
+
   SwiperCore.use([Autoplay]);
+
   return (
     <div className="cursor-not-allowed">
       <Head>
@@ -64,7 +59,6 @@ export default function Home() {
       <AnimatedCursor
         innerSize={10}
         outerSize={50}
-        // color="241, 211, 2"
         color="255,255,255"
         outerAlpha={0.2}
         innerScale={0.5}
@@ -73,7 +67,7 @@ export default function Home() {
 
       <main>
         {/* Landing Section */}
-        <section className="relative h-[40vh] md:h-[100vh] flex items-center justify-center md:justify-start md:px-32 lg:px-24 xl:px-64">
+        <section className="relative pointer-events-none h-[40vh] md:h-[100vh] flex items-center justify-center md:justify-start md:px-32 lg:px-24 xl:px-64">
           <Image
             className="opacity-40"
             src={landingImage}
@@ -140,15 +134,17 @@ export default function Home() {
                 data-aos="fade-up"
                 data-aos-delay={elem.delay}
               >
-                <div className="group service-item bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:translate-y-2 transition-all">
-                  <div className="w-14">{elem.logo}</div>
-                  <h2 className="py-5 text-2xl text-white font-poppinsl font-bold group-hover:text-gray">
-                    {elem.name}
-                  </h2>
-                  <p className="text-lg text-[#717173] font-light group-hover:text-gray">
-                    {elem.bio}
-                  </p>
-                </div>
+                <Link href={"/" + elem.id}>
+                  <div className="group service-item bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:translate-y-2 transition-all">
+                    <div className="w-14">{elem.logo}</div>
+                    <h2 className="py-5 text-2xl text-white font-poppinsl font-bold group-hover:text-gray">
+                      {elem.name}
+                    </h2>
+                    <p className="text-lg text-[#717173] font-light group-hover:text-gray">
+                      {elem.bio}
+                    </p>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -248,7 +244,6 @@ export default function Home() {
             <ContactForm />
           </div>
         </section>
-        {/* <div ref={mapContainer} className="map-container h-64 z-50" /> */}
         <section className="hidden lg:inline-flex lg:w-full h-64">
           <Map />
         </section>

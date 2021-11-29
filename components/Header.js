@@ -9,7 +9,6 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 function Header() {
   const router = useRouter();
 
-  const [toggle, setToggle] = useState(false);
   const [colorChange, setColorChange] = useState(false);
 
   const changeNavbarColor = () => {
@@ -26,10 +25,6 @@ function Header() {
 
   // #042825
 
-  const toggleMenu = () => {
-    setToggle(!toggle);
-  };
-
   return (
     <>
       <header
@@ -42,19 +37,6 @@ function Header() {
         <div>
           <h1 className="font-staat text-4xl md:text-5xl leading-10">BUGG.</h1>
         </div>
-        {/* <div className="flex items-center md:hidden">
-          {!toggle ? (
-            <MenuIcon
-              className="w-8 h-8 cursor-pointer"
-              onClick={() => toggleMenu()}
-            />
-          ) : (
-            <XIcon
-              className="w-8 h-8 cursor-pointer"
-              onClick={() => toggleMenu()}
-            />
-          )}
-        </div> */}
         <div className="hidden md:flex items-center gap-20 text-base font-poppins font-medium">
           <button
             onClick={() => {
