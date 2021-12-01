@@ -38,6 +38,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <link rel="stylesheet" href="owl-carousel/owl.theme.css"></link>
+        <meta http-equiv="pragma" content="no-cache" />
       </Head>
 
       {/* Header */}
