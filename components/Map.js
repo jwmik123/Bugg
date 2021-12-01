@@ -1,8 +1,5 @@
 import { useState } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
-import Image from "next/image";
-
-import locationMarker from "../assets/images/location-marker.png";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 import "mapbox-gl/dist/mapbox-gl.css";

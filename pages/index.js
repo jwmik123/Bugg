@@ -19,10 +19,6 @@ import {
   MailIcon,
 } from "@heroicons/react/solid";
 import "aos/dist/aos.css";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
 export default function Home() {
   const router = useRouter();
@@ -181,70 +177,18 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        {/* <section
-          id="contact"
-          className="contact flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 lg:py-24 bg-gray"
-        >
-          <div className="pr-5 w-10/12 lg:w-1/2">
+        <section className="flex flex-col py-14 md:px-32 lg:px-24 xl:px-64 items-center md:items-start">
+          <div className="flex items-center flex-col w-10/12 md:w-full pb-12 lg:pb-28 pt-8 lg:pt-12">
             <h1
               data-aos="fade-up"
-              className="text-white text-4xl md:text-6xl font-extrabold"
+              className="text-4xl text-white font-extrabold md:text-6xl  text-center pb-4"
             >
-              Laten we samen een project starten.
+              Laten we samenwerken.
             </h1>
             <p
               data-aos="fade-up"
-              className="text-[#717173] font-light text-lg my-5"
+              className="text-lg text-center text-[#717173]"
             >
-              We zijn altijd op zoek naar nieuwe projecten en nieuwe connecties!
-              Stuur ons gerust een bericht.
-            </p>
-            <div data-aos="fade-up">
-              <div className="flex mb-2">
-                <span className="mr-2">
-                  <LocationMarkerIcon className="w-5 h-5 text-yellow" />
-                </span>
-                <p className="text-white">
-                  <a
-                    target="_blank"
-                    href="http://maps.google.com/?daddr=Kinkerstraat+208,+Amsterdam"
-                  >
-                    Kinkerstraat 208-2, Amsterdam
-                  </a>
-                </p>
-              </div>
-              <div className="flex mb-2">
-                <span className="mr-2">
-                  <PhoneIcon className="w-5 h-5 text-yellow" />
-                </span>
-                <p className="text-white">
-                  <a href="tel:+31640395455">+31 6 40395455</a>
-                </p>
-              </div>
-              <div className="flex mb-5">
-                <span className="mr-2">
-                  <MailIcon className="w-5 h-5 text-yellow" />
-                </span>
-                <p className="text-white">
-                  <a href="mailto:tommy@bugg.amsterdam">hello@bugg.amsterdam</a>
-                </p>
-              </div>
-            </div>
-            <div className="">
-            <Map />
-            </div>
-          </div>
-          <div className="w-10/12 lg:w-1/2">
-            <ContactForm />
-          </div>
-        </section> */}
-
-        <section className="flex flex-col py-14 md:px-32 lg:px-24 xl:px-64 items-center md:items-start">
-          <div className="flex items-center flex-col w-10/12 md:w-full pb-12 pt-12">
-            <h1 className="text-4xl text-white font-extrabold md:text-6xl  text-center pb-4">
-              Laten we samenwerken.
-            </h1>
-            <p className=" text-lg text-center text-[#717173]">
               Vul het form hier beneden in of mail/bel ons direct. We zullen zo
               snel mogelijk contact me je opnemen.
             </p>
@@ -289,7 +233,10 @@ export default function Home() {
               </div>
               <ContactForm />
             </div>
-            <div className="hidden lg:block w-10/12 lg:w-2/4 h-[400px] relative">
+            <div
+              data-aos="fade-up"
+              className="hidden lg:block w-10/12 lg:w-2/4 h-[400px] relative"
+            >
               <Map />
             </div>
           </div>

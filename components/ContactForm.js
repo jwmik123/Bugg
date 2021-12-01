@@ -1,5 +1,4 @@
 import { useReducer, useState } from "react";
-
 import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -75,8 +74,6 @@ const ContactForm = () => {
           }
         },
         (err) => {
-          // eslint-disable-next-line no-console
-          console.log(err);
           setFormSubmitted({
             title: "Error sending message, try again later",
             paragraph: "Please contact Bugg. either by phone or email.",
