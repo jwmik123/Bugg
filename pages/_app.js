@@ -22,6 +22,11 @@ Router.events.on("routeChangeError", progress.finish);
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     AOS.init();
+    window.onLoad = () => {
+      if (!window.location.hash) {
+        window.location.reload(true);
+      }
+    };
   });
   return <Component {...pageProps} />;
 }

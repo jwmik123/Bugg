@@ -203,14 +203,7 @@ export default function Home() {
                   <span className="mr-1">
                     <LocationMarkerIcon className="w-5 h-5 text-yellow" />
                   </span>
-                  <p className="text-white">
-                    <a
-                      target="_blank"
-                      href="http://maps.google.com/?daddr=Kinkerstraat+208,+Amsterdam"
-                    >
-                      Kinkerstraat 208-2, Amsterdam
-                    </a>
-                  </p>
+                  <p className="text-white">Kinkerstraat 208-2, Amsterdam</p>
                 </div>
                 <div className="flex  mb-2">
                   <span className="mr-1">
