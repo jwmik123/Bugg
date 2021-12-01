@@ -145,6 +145,10 @@ const ContactForm = () => {
               >
                 Versturen
               </button>
+              <div className="text-white text-xs mt-4 opacity-20">
+                <p>BTW: NL863137684B01</p>
+                <p>KVK: 84222441</p>
+              </div>
             </div>
           </form>
         </div>

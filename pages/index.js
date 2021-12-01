@@ -2,36 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
-
-import TextLoop from "react-text-loop";
-import animateScrollTo from "animated-scroll-to";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay } from "swiper";
-
+import dynamic from "next/dynamic";
+import { services } from "../assets/dataList/dataList";
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
 import Map from "../components/Map";
 import Cases from "../components/Cases";
 import Footer from "../components/Footer";
-
-import { services } from "../assets/dataList/dataList";
-
+import TextLoop from "react-text-loop";
+import animateScrollTo from "animated-scroll-to";
 import landingImage from "../assets/images/landing-image.webp";
-import team_joel from "../assets/images/joel.webp";
-
 import { ChevronDownIcon } from "@heroicons/react/outline";
-
-import dynamic from "next/dynamic";
-const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
-  ssr: false,
-});
-
 import {
   LocationMarkerIcon,
   PhoneIcon,
   MailIcon,
 } from "@heroicons/react/solid";
-
 import "aos/dist/aos.css";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -41,7 +27,9 @@ import "swiper/css/scrollbar";
 export default function Home() {
   const router = useRouter();
 
-  SwiperCore.use([Autoplay]);
+  const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
+    ssr: false,
+  });
 
   return (
     <div className="cursor-not-allowed">
@@ -80,7 +68,7 @@ export default function Home() {
               data-aos="flip-down"
               className="text-white text-4xl md:text-7xl lg:text-8xl font-poppins font-bold"
             >
-              Hi, welkom bij Bugg.
+              Wij zijn BUGG.
             </h1>
             <div data-aos="flip-down" data-aos-delay="150">
               <TextLoop
@@ -111,6 +99,7 @@ export default function Home() {
             />
           </div>
         </section>
+
         {/* Services Section */}
         <section className="services flex flex-col items-center justify-center bg-gray py-14 px-6 md:px-16 lg:px-16">
           <h1
@@ -134,8 +123,8 @@ export default function Home() {
                 data-aos="fade-up"
                 data-aos-delay={elem.delay}
               >
-                <Link href={"/" + elem.id}>
-                  <div className="group service-item bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:translate-y-2 transition-all">
+                <Link href={"/" + elem.name}>
+                  <div className="group service-item bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:-translate-y-2 transition-all">
                     <div className="w-14">{elem.logo}</div>
                     <h2 className="py-5 text-2xl text-white font-poppinsl font-bold group-hover:text-gray">
                       {elem.name}
@@ -154,21 +143,21 @@ export default function Home() {
         <Cases />
 
         {/* About Us Section */}
-        <section className="about flex flex-col gap-2 items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 bg-gray">
+        <section className="about flex flex-col gap-2 items-center lg:items-start lg:flex-row text-center lg:text-left justify-center md:py-14 md:px-32 lg:px-24 xl:px-64 bg-gray">
           <div
             data-aos="fade-up"
             className="w-10/12 lg:w-1/2 mb-6 flex justify-center items-center"
           ></div>
-          <div className="pr-5 w-10/12 lg:w-1/2">
+          <div className="md:pr-5 w-10/12 lg:w-1/2">
             <h1
               data-aos="fade-up"
-              className="text-white text-4xl md:text-6xl font-extrabold"
+              className="text-white text-4xl text-center md:text-left md:text-6xl font-extrabold"
             >
-              Wij zijn Bugg.
+              Maak kennis met BUGG.
             </h1>
             <p
               data-aos="fade-up"
-              className="text-white font-light text-lg my-5 tekst"
+              className="text-white font-light text-center md:text-left text-lg my-5 tekst"
               id="tekst"
             >
               We zijn altijd op zoek naar nieuwe projecten en nieuwe connecties!
@@ -176,7 +165,7 @@ export default function Home() {
               projecten en nieuwe connecties! Stuur ons gerust een bericht.We
               zijn altijd op zoek naar nieuwe projecten en nieuwe connecties!
               Stuur ons gerust een bericht.We zijn altijd op zoek naar nieuwe
-              projecten en nieuwe connecties! Stuur ons gerust een bericht.
+              projeh77cten en nieuwe connecties! Stuur ons gerust een bericht.
             </p>
 
             <div data-aos="fade-up" className="flex mb-5">
@@ -189,8 +178,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         {/* Contact Section */}
-        <section
+        {/* <section
           id="contact"
           className="contact flex flex-col items-center lg:items-start lg:flex-row text-center lg:text-left justify-center py-14 md:px-32 lg:px-24 xl:px-64 lg:py-24 bg-gray"
         >
@@ -239,13 +229,33 @@ export default function Home() {
                 </p>
               </div>
             </div>
+            <div className="">
+            <Map />
+            </div>
           </div>
           <div className="w-10/12 lg:w-1/2">
             <ContactForm />
           </div>
-        </section>
-        <section className="hidden lg:inline-flex lg:w-full h-64">
-          <Map />
+        </section> */}
+
+        <section className="flex flex-col py-14 md:px-32 lg:px-24 xl:px-64">
+          <div className="flex items-center flex-col w-10/12 md:w-full pb-12 pt-12">
+            <h1 className="text-4xl text-white font-extrabold md:text-6xl  text-center pb-4">
+              Laten we samenwerken.
+            </h1>
+            <p className="text-white font-light text-lg text-center">
+              Vul het form hier beneden in of mail/bel ons direct. We zullen zo
+              snel mogelijk contact me je opnemen.
+            </p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-10">
+            <div className="w-10/12 lg:w-2/4 ">
+              <ContactForm />
+            </div>
+            <div className="w-10/12 lg:w-2/4 h-[400px] relative">
+              <Map />
+            </div>
+          </div>
         </section>
       </main>
 

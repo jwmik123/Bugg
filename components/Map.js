@@ -3,6 +3,7 @@ import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import Image from "next/image";
 
 import locationMarker from "../assets/images/location-marker.png";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -17,14 +18,16 @@ function Map() {
     height: "100%",
     latitude: coords.lat,
     longitude: coords.long,
-    zoom: 11,
+    zoom: 12.99,
   });
 
   const [selectedLocation, setSelectedLocation] = useState(false);
 
   return (
     <ReactMapGL
-      mapStyle="mapbox://styles/jalla/ckvwg1anm0rnl14n0z9h8mcwf"
+      className="w-full h-full rounded-2xl shadow-md"
+      // mapStyle="mapbox://styles/jalla/ckvwg1anm0rnl14n0z9h8mcwf"
+      mapStyle="mapbox://styles/jalla/ckwnnidrx79i614p33on83a16"
       mapboxApiAccessToken={process.env.mapbox_token}
       {...viewport}
       onViewportChange={(nextViewport) => setViewport(nextViewport)}
@@ -34,7 +37,7 @@ function Map() {
         latitude={coords.lat}
         onClick={() => setSelectedLocation(true)}
       >
-        <Image src={locationMarker} width="36px" height="36px" />
+        <FaMapMarkerAlt className="w-7 h-7 text-yellow cursor-pointer" />
       </Marker>
       {selectedLocation ? (
         <Popup

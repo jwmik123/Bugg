@@ -62,10 +62,25 @@
   .logo {
     @apply w-full h-full text-yellow group-hover:text-gray;
   }
+
+  .footer-icon {
+    @apply w-7 h-7 lg:hover:-translate-y-2 transition duration-75;
+  }
 }
 
 body {
   font-family: "Poppins", sans-serif;
   background: rgb(22, 24, 22);
+}
+
+html {
   cursor: none;
+}
+
+.mapboxgl-ctrl-bottom-left {
+  display: none;
+}
+
+.mapboxgl-ctrl-bottom-right {
+  display: none;
 }
