@@ -238,21 +238,57 @@ export default function Home() {
           </div>
         </section> */}
 
-        <section className="flex flex-col py-14 md:px-32 lg:px-24 xl:px-64">
+        <section className="flex flex-col py-14 md:px-32 lg:px-24 xl:px-64 items-center md:items-start">
           <div className="flex items-center flex-col w-10/12 md:w-full pb-12 pt-12">
             <h1 className="text-4xl text-white font-extrabold md:text-6xl  text-center pb-4">
               Laten we samenwerken.
             </h1>
-            <p className="text-white font-light text-lg text-center">
+            <p className=" text-lg text-center text-[#717173]">
               Vul het form hier beneden in of mail/bel ons direct. We zullen zo
               snel mogelijk contact me je opnemen.
             </p>
           </div>
-          <div className="flex flex-col md:flex-row gap-10">
-            <div className="w-10/12 lg:w-2/4 ">
+          <div className="flex w-10/12 lg:w-full flex-col md:flex-row gap-10">
+            <div className="w-full lg:w-2/4">
+              <div
+                data-aos="fade-up"
+                className="flex flex-col md:flex-row justify-between text-sm gap-2"
+              >
+                <div className="flex mb-2">
+                  <span className="mr-1">
+                    <LocationMarkerIcon className="w-5 h-5 text-yellow" />
+                  </span>
+                  <p className="text-white">
+                    <a
+                      target="_blank"
+                      href="http://maps.google.com/?daddr=Kinkerstraat+208,+Amsterdam"
+                    >
+                      Kinkerstraat 208-2, Amsterdam
+                    </a>
+                  </p>
+                </div>
+                <div className="flex  mb-2">
+                  <span className="mr-1">
+                    <PhoneIcon className="w-5 h-5 text-yellow" />
+                  </span>
+                  <p className="text-white">
+                    <a href="tel:+31640395455">+31 6 40395455</a>
+                  </p>
+                </div>
+                <div className="flex mb-5">
+                  <span className="mr-1">
+                    <MailIcon className="w-5 h-5 text-yellow" />
+                  </span>
+                  <p className="text-white">
+                    <a href="mailto:tommy@bugg.amsterdam">
+                      hello@bugg.amsterdam
+                    </a>
+                  </p>
+                </div>
+              </div>
               <ContactForm />
             </div>
-            <div className="w-10/12 lg:w-2/4 h-[400px] relative">
+            <div className="hidden lg:block w-10/12 lg:w-2/4 h-[400px] relative">
               <Map />
             </div>
           </div>
