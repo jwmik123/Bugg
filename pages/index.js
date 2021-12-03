@@ -177,7 +177,10 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section className="flex flex-col py-14 md:px-32 lg:px-24 xl:px-64 items-center md:items-start">
+        <section
+          id="contact"
+          className="contact flex flex-col py-14 md:px-32 lg:px-24 xl:px-64 items-center md:items-start"
+        >
           <div className="flex items-center flex-col w-10/12 md:w-full pb-12 lg:pb-28 pt-8 lg:pt-12">
             <h1
               data-aos="fade-up"
