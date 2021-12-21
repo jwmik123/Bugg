@@ -49,7 +49,7 @@ export default function Home() {
       <main>
         {/* Landing Section */}
         <section className="relative pointer-events-none h-[40vh] md:h-[100vh] flex items-center justify-center md:justify-start md:px-32 lg:px-24 xl:px-64">
-          {isMobile && (
+          {isMobile ? (
             <Image
               className="opacity-40"
               src="/Videos/bugg-background.mp4"
@@ -57,16 +57,16 @@ export default function Home() {
               objectFit="cover"
               objectPosition="center"
             />
+          ) : (
+            <video
+              className="hidden md:block absolute w-auto min-w-full min-h-full max-w-none left-0 opacity-30"
+              autoPlay
+              loop
+              muted
+            >
+              <source src="/Videos/bugg-background.mp4" type="video/mp4" />
+            </video>
           )}
-
-          <video
-            className="absolute w-auto min-w-full min-h-full max-w-none left-0"
-            autoPlay
-            loop
-            muted
-          >
-            <source src="/Videos/bugg-background.mp4" type="video/mp4" />
-          </video>
           <div className="absolute flex flex-col gap-1 md:gap-3">
             <h1
               data-aos="flip-down"
