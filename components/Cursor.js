@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-import classNames from "classNames";
+import classNames from "classnames";
 
 const isMobile = () => {
   const ua = navigator.userAgent;
