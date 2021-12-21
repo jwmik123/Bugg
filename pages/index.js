@@ -52,7 +52,7 @@ export default function Home() {
           {isMobile ? (
             <Image
               className="opacity-40"
-              src="/Videos/bugg-background.mp4"
+              src={landingImage}
               layout="fill"
               objectFit="cover"
               objectPosition="center"
