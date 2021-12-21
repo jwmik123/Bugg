@@ -1,7 +1,9 @@
 import "tailwindcss/tailwind.css";
 import "../styles/global.css";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import Cursor from "../components/Cursor";
 
 import ProgressBar from "@badrap/bar-of-progress";
 import Router from "next/router";
@@ -28,7 +30,12 @@ function MyApp({ Component, pageProps }) {
       }
     };
   });
-  return <Component {...pageProps} />;
+
+  return (
+    <>
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;

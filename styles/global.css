@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import "../node_modules/atropos/atropos.css";
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;800&display=swap"); */
 
 @font-face {
   font-family: "Poppins", sans-serif;
@@ -52,7 +51,7 @@
   }
 
   .input-field {
-    @apply focus:outline-yellow bg-[#1d1d24] font-light px-5 py-3 rounded-lg w-full text-white;
+    @apply focus:outline-yellow bg-gray font-light px-5 py-3 rounded-lg w-full text-white;
   }
 
   .form-error {
@@ -73,8 +72,44 @@ body {
   background: rgb(22, 24, 22);
 }
 
-html {
-  cursor: none;
+.cursor {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fefefe;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: all 150ms ease;
+  transition-property: background-color, opacity, transform, mix-blend-mode;
+  z-index: 998;
+  mix-blend-mode: difference;
+}
+
+.cursor--hidden {
+  opacity: 0;
+}
+
+.cursor--link-hovered {
+  transform: translate(-50%, -50%) scale(1.25);
+  background-color: #fefefe;
+}
+
+/* .cursor--service-hovered {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: #fefefe;
+}
+.cursor--service-hovered::before {
+  content: "Bekijk Dienst";
+  position: relative;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.5rem;
+} */
+
+.cursor--clicked {
+  transform: translate(-50%, -50%) scale(0.9);
+  background-color: #fefefe;
 }
 
 .mapboxgl-ctrl-bottom-left {

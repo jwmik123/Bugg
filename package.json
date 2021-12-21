@@ -11,14 +11,17 @@
     "animated-scroll-to": "^2.2.0",
     "aos": "^2.3.4",
     "atropos": "^1.0.1",
+    "classnames": "^2.3.1",
     "emailjs-com": "^3.2.0",
     "firebase": "^9.5.0",
     "formik": "^2.2.9",
+    "gsap": "^3.8.0",
     "mapbox-gl": "^2.6.1",
-    "next": "^12.0.4",
+    "next": "^12.0.7",
     "react": "^17.0.2",
     "react-animated-cursor": "^2.2.0",
     "react-animations": "^1.0.0",
+    "react-device-detect": "^2.1.2",
     "react-dom": "^17.0.2",
     "react-firebase-hooks": "^3.0.4",
     "react-firebaseui": "^5.0.2",
@@ -30,7 +33,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.2",
-    "tailwindcss": "^2.2.19"
+    "postcss": "^8.4.4",
+    "tailwindcss": "^3.0.1"
   }
 }

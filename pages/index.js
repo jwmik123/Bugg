@@ -1,17 +1,28 @@
+import { useState } from "react";
+import { isMobile } from "react-device-detect";
+// Framework contents
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import dynamic from "next/dynamic";
 import { services } from "../assets/dataList/dataList";
+import TextLoop from "react-text-loop";
+import animateScrollTo from "animated-scroll-to";
+
+// Components
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
 import Map from "../components/Map";
 import Cases from "../components/Cases";
+import Cursor from "../components/Cursor";
 import Footer from "../components/Footer";
-import TextLoop from "react-text-loop";
-import animateScrollTo from "animated-scroll-to";
+
+// Images
 import landingImage from "../assets/images/landing-image.webp";
+import ymprove from "../assets/images/logos/ymprove.png";
+import mvbox from "../assets/images/logos/mvbox.jpeg";
+import mursee from "../assets/images/logos/mursee.webp";
+
+// Logos
 import { ChevronDownIcon } from "@heroicons/react/outline";
 import {
   LocationMarkerIcon,
@@ -21,14 +32,9 @@ import {
 import "aos/dist/aos.css";
 
 export default function Home() {
-  const router = useRouter();
-
-  const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
-    ssr: false,
-  });
-
   return (
     <div className="cursor-not-allowed">
+      <Cursor />
       <Head>
         <title>Bugg.</title>
         <link rel="icon" href="/favicon.ico" />
@@ -40,26 +46,27 @@ export default function Home() {
       {/* Header */}
       <Header />
 
-      {/* Cursor */}
-      <AnimatedCursor
-        innerSize={10}
-        outerSize={50}
-        color="255,255,255"
-        outerAlpha={0.2}
-        innerScale={0.5}
-        outerScale={1.5}
-      />
-
       <main>
         {/* Landing Section */}
         <section className="relative pointer-events-none h-[40vh] md:h-[100vh] flex items-center justify-center md:justify-start md:px-32 lg:px-24 xl:px-64">
-          <Image
-            className="opacity-40"
-            src={landingImage}
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-          />
+          {isMobile && (
+            <Image
+              className="opacity-40"
+              src="/Videos/bugg-background.mp4"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+            />
+          )}
+
+          <video
+            className="absolute w-auto min-w-full min-h-full max-w-none left-0"
+            autoPlay
+            loop
+            muted
+          >
+            <source src="/Videos/bugg-background.mp4" type="video/mp4" />
+          </video>
           <div className="absolute flex flex-col gap-1 md:gap-3">
             <h1
               data-aos="flip-down"
@@ -115,12 +122,13 @@ export default function Home() {
           <div className="flex flex-wrap">
             {services.map((elem, i) => (
               <div
+                id="service"
                 key={elem.id}
                 className="w-full sm:w-1/2 lg:w-1/3 flex"
                 data-aos="fade-up"
                 data-aos-delay={elem.delay}
               >
-                <Link href={"/" + elem.name}>
+                <Link href={"/services/" + elem.name}>
                   <div className="group service-item bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:-translate-y-2 transition-all">
                     <div className="w-14">{elem.logo}</div>
                     <h2 className="py-5 text-2xl text-white font-poppinsl font-bold group-hover:text-gray">
@@ -137,7 +145,29 @@ export default function Home() {
         </section>
 
         {/* Cases Section */}
-        <Cases />
+        {/* <section className="cases bg-gray-light items-center lg:items-start md:py-14 md:px-32 lg:px-24 xl:px-64">
+          <div>
+            <h1 className="text-white text-4xl md:text-6xl text-center font-extrabold">
+              Projecten
+            </h1>
+          </div>
+          <div className="flex flex-wrap gap-10 justify-center pt-10">
+            <div className="w-100 h-100 relative">
+              <img src={mursee} />
+            </div>
+            <div className="w-100 h-100 ">
+              <img src={mvbox} />
+            </div>
+            <div className="">
+              <Image
+                src={mursee}
+                width="100%"
+                height="100%"
+                objectFit="cover"
+              />
+            </div>
+          </div>
+        </section> */}
 
         {/* About Us Section */}
         <section className="about flex flex-col gap-2 items-center lg:items-start lg:flex-row text-center lg:text-left justify-center md:py-14 md:px-32 lg:px-24 xl:px-64 bg-gray">
@@ -179,7 +209,7 @@ export default function Home() {
         {/* Contact Section */}
         <section
           id="contact"
-          className="contact flex flex-col py-14 md:px-32 lg:px-24 xl:px-64 items-center md:items-start"
+          className="contact flex flex-col py-14 md:px-32 lg:px-24 xl:px-64 items-center md:items-start bg-gray-light"
         >
           <div className="flex items-center flex-col w-10/12 md:w-full pb-12 lg:pb-28 pt-8 lg:pt-12">
             <h1
