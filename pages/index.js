@@ -8,6 +8,8 @@ import { services } from "../assets/dataList/dataList";
 import TextLoop from "react-text-loop";
 import animateScrollTo from "animated-scroll-to";
 
+import classNames from "classNames";
+
 // Components
 import Header from "../components/Header";
 import ContactForm from "../components/ContactForm";
