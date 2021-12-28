@@ -1,12 +1,15 @@
 import "tailwindcss/tailwind.css";
 import "../styles/global.css";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import ProgressBar from "@badrap/bar-of-progress";
 import Router from "next/router";
 
 import AOS from "aos";
+import ReactGA from "react-ga";
+
+const TRACKING_ID = "UA-215970187-1";
 
 const progress = new ProgressBar({
   size: 4,
@@ -27,6 +30,8 @@ function MyApp({ Component, pageProps }) {
         window.location.reload(true);
       }
     };
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.pageview(window.location.pathname + window.location.search);
   });
 
   return (
