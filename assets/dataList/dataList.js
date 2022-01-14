@@ -18,7 +18,7 @@ export const services = [
   {
     id: 2,
     name: "Videoproducties & Animaties",
-    bio: "Geef je bedrijf of project een boost doormiddel van een promotievideo of animatie.",
+    bio: "Geef je bedrijf of project een boost door middel van een promotievideo of animatie.",
     logo: <FilmIcon className="logo" />,
     delay: 50,
   },
@@ -46,7 +46,7 @@ export const services = [
   {
     id: 6,
     name: "Copywriting & SEO",
-    bio: "Goede teksten en juiste vorm van opmaak op je website verbeterd de vindbaarheid van je website.",
+    bio: "Goede teksten en juiste vorm van opmaak op je website verbetert de vindbaarheid van je website.",
     logo: <DocumentTextIcon className="logo" />,
     delay: 250,
   },
