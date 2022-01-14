@@ -187,12 +187,15 @@ export default function Home() {
               className="text-white font-light text-center md:text-left text-lg my-5 tekst"
               id="tekst"
             >
-              We zijn altijd op zoek naar nieuwe projecten en nieuwe connecties!
-              Stuur ons gerust een bericht. We zijn altijd op zoek naar nieuwe
-              projecten en nieuwe connecties! Stuur ons gerust een bericht.We
-              zijn altijd op zoek naar nieuwe projecten en nieuwe connecties!
-              Stuur ons gerust een bericht.We zijn altijd op zoek naar nieuwe
-              projeh77cten en nieuwe connecties! Stuur ons gerust een bericht.
+              Hi! Wij zijn Tommy en Joël, de oprichters van BUGG. Het idee om
+              BUGG te starten is ontstaan toen we erachter kwamen dat wij elkaar
+              perfect aanvullen. Tommy is de jongen die goed in groepen kan
+              verkeren en connecties kan maken met mensen + hij heeft veel
+              verstand van marketing en ICT. Joël is een echte ICT specialist
+              die alles kan maken van websites, webshops tot applicaties. Samen
+              hebben wij alle tools in huis voor een Full Service Agency
+              bedrijf! Dit doen wij niet alleen. we hebben een team van
+              specialisten op elk gebied.
             </p>
 
             <div data-aos="fade-up" className="flex mb-5">
