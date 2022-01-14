@@ -61,7 +61,7 @@ export default function Home() {
             <video
               className="hidden md:block absolute w-auto min-w-full min-h-full max-w-none left-0 opacity-30"
               autoPlay
-              loop
+              // loop
               muted
             >
               <source src="/Videos/bugg-background.mp4" type="video/mp4" />
@@ -91,9 +91,9 @@ export default function Home() {
             <h3
               data-aos="flip-down"
               data-aos-delay="300"
-              className="text-white ml-1 text-1xl md:text-4xl font-poppins"
+              className="text-white ml-1 text-1xl md:text-3xl font-poppins"
             >
-              In Amsterdam
+              Full Service Agency in Amsterdam
             </h3>
             <ChevronDownIcon
               className="hidden lg:block h-12 w-12 text-yellow rounded-full mt-6 cursor-pointer animate-bounce"
@@ -129,9 +129,9 @@ export default function Home() {
                 data-aos-delay={elem.delay}
               >
                 <Link href={"/services/" + elem.name}>
-                  <div className="group service-item bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center cursor-pointer hover:bg-yellow hover:-translate-y-2 transition-all">
+                  <div className="group service-item bg-gray-light m-3 py-8 px-12 rounded-lg min-h-[350px] flex flex-col justify-center hover:bg-yellow hover:-translate-y-2 transition-all">
                     <div className="w-14">{elem.logo}</div>
-                    <h2 className="py-5 text-2xl text-white font-poppinsl font-bold group-hover:text-gray">
+                    <h2 className="py-5 text-2xl text-white font-poppins font-bold group-hover:text-gray">
                       {elem.name}
                     </h2>
                     <p className="text-lg text-[#717173] font-light group-hover:text-gray">

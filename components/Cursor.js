@@ -13,8 +13,8 @@ const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [clicked, setClicked] = useState(false);
   const [linkHovered, setLinkHovered] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const [serviceHovered, setServiceHovered] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   const switchPage = useCallback((event) => {
     console.log(event);
@@ -48,8 +48,8 @@ const Cursor = () => {
     });
 
     document.querySelectorAll("#service").forEach((el) => {
-      el.addEventListener("mouseover", () => setLinkHovered(true));
-      el.addEventListener("mouseout", () => setLinkHovered(false));
+      el.addEventListener("mouseover", () => setServiceHovered(true));
+      el.addEventListener("mouseout", () => setServiceHovered(false));
     });
   };
 

@@ -70,6 +70,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background: rgb(22, 24, 22);
+  cursor: none;
 }
 
 .cursor {
@@ -95,17 +96,19 @@ body {
   background-color: #fefefe;
 }
 
-/* .cursor--service-hovered {
-  transform: translate(-50%, -50%) scale(1.5);
+.cursor--service-hovered {
+  transform: translate(-50%, -50%) scale(3);
   background-color: #fefefe;
 }
+
 .cursor--service-hovered::before {
-  content: "Bekijk Dienst";
-  position: relative;
-  display: flex;
-  font-family: "Poppins", sans-serif;
+  content: "Go to service";
   font-size: 0.5rem;
-} */
+  position: absolute;
+  top: 0.5rem;
+  left: 0.3rem;
+  line-height: 0.6rem;
+}
 
 .cursor--clicked {
   transform: translate(-50%, -50%) scale(0.9);
