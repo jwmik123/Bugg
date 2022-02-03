@@ -18,9 +18,6 @@ import Footer from "../components/Footer";
 
 // Images
 import landingImage from "../assets/images/landing-image.webp";
-import ymprove from "../assets/images/logos/ymprove.png";
-import mvbox from "../assets/images/logos/mvbox.jpeg";
-import mursee from "../assets/images/logos/mursee.webp";
 
 // Logos
 import { ChevronDownIcon } from "@heroicons/react/outline";
@@ -48,7 +45,7 @@ export default function Home() {
 
       <main>
         {/* Landing Section */}
-        <section className="relative pointer-events-none h-[40vh] md:h-[100vh] flex items-center justify-center md:justify-start md:px-32 lg:px-24 xl:px-64">
+        <section className="relative h-[40vh] md:h-[100vh] flex items-center justify-center md:justify-start md:px-32 lg:px-24 xl:px-64">
           {isMobile ? (
             <Image
               className="opacity-40"
@@ -59,9 +56,8 @@ export default function Home() {
             />
           ) : (
             <video
-              className="hidden md:block absolute w-auto min-w-full min-h-full max-w-none left-0 opacity-30"
+              className="hidden md:block absolute w-auto min-w-full min-h-full max-w-none left-0 opacity-30 pointer-events-none"
               autoPlay
-              // loop
               muted
             >
               <source src="/Videos/bugg-background.mp4" type="video/mp4" />
@@ -96,7 +92,7 @@ export default function Home() {
               Full Service Agency in Amsterdam
             </h3>
             <ChevronDownIcon
-              className="hidden lg:block h-12 w-12 text-yellow rounded-full mt-6 cursor-pointer animate-bounce"
+              className="hidden lg:block h-12 w-12 text-yellow rounded-full mt-6 animate-bounce"
               onClick={() => {
                 animateScrollTo(document.querySelector(".services"));
               }}
